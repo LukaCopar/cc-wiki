@@ -1,7 +1,7 @@
 <?php
 	function OpenCon()
 	{
-		$dbhost = "192.168.1.8";
+		$dbhost = "192.168.1.6";
 		$dbuser = "cc-wiki";
 		$dbpass = "";
 		$db = "cc-wiki";
