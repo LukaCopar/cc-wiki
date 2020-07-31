@@ -1,1 +1,6 @@
-console.log("qyyadf aksnfg9ush");
+window.onload = () => {
+	console.log($("#move").html());
+	$("#move").click(() => {
+		//TODO animirej transition
+	});
+}
