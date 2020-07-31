@@ -6,6 +6,7 @@
 	</head>
 
 	<body>
-	    <h1>ayyasdasdasasdasddasd</h1>
+	    <h1>ayy</h1>
+	    <?php require 'php/connection-test.php'; ?>
 	</body>
 </html>
