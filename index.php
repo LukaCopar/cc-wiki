@@ -3,9 +3,10 @@
 	    <title>Castle Clash Wiki</title>
 		<link rel="stylesheet" href="../../css/style.css" type="text/css">
 		<script src="../js/index.js"></script>
+		
 	</head>
 
 	<body>
-	    <h1>ayyasdasdasasdasddasd</h1>
+	    <h1>ayy</h1>
 	</body>
 </html>
