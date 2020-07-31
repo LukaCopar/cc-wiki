@@ -1,0 +1,486 @@
+﻿
+-- Table heros
+
+CREATE TABLE `heros`
+(
+  `id` Serial NOT NULL,
+  `Name` Varchar(25) NOT NULL,
+  `biography` Varchar(1000) NOT NULL,
+  `skill_id` Int NOT NULL,
+  `img_url` Varchar(100) NOT NULL,
+  `img_url_evo` Varchar(100) NOT NULL,
+  `warden_id` Int NOT NULL,
+  `move_spd` Int NOT NULL,
+  `atk_speed` Int NOT NULL,
+  PRIMARY KEY (`id`)
+)
+;
+
+CREATE INDEX `IX_Relationship39` ON `heros` (`warden_id`)
+;
+
+CREATE INDEX `IX_Relationship11` ON `heros` (`skill_id`)
+;
+
+-- Table hero_lvl
+
+CREATE TABLE `hero_lvl`
+(
+  `id` Serial NOT NULL,
+  `level` Int NOT NULL,
+  `hero_name` Varchar(25) NOT NULL,
+  `attack` Int NOT NULL,
+  `acc` Int NOT NULL,
+  `crit` Int NOT NULL,
+  `crit_res` Int NOT NULL,
+  `hp` Int NOT NULL,
+  `dodge` Int NOT NULL,
+  `crit_dmg` Int NOT NULL,
+  `dmg_cap` Int,
+  `dmg_cap_ref` Int,
+  PRIMARY KEY (`id`)
+)
+;
+
+-- Table talents
+
+CREATE TABLE `talents`
+(
+  `id` Serial NOT NULL,
+  `name` Varchar(30) NOT NULL,
+  `Description` Varchar(500) NOT NULL,
+  `img_url` Varchar(100) NOT NULL,
+  `level` Int NOT NULL,
+  `attack` Int,
+  `acc` Int,
+  `crit` Int,
+  `crit_res` Int,
+  `hp` Int,
+  `dodge` Int,
+  `crit_dmg` Int,
+  `dmg_cap` Int,
+  `dmg_cap_ref` Int,
+  `insi_hp` Int,
+  `insi_atk` Int,
+  `max_hp_atk` Int,
+  `form` Int,
+  `dmg_red` Int,
+  PRIMARY KEY (`id`)
+)
+;
+
+-- Table builds
+
+CREATE TABLE `builds`
+(
+  `name` Varchar(20),
+  `id` Serial NOT NULL,
+  `hero_id` Serial,
+  `talent_id` Serial,
+  `lvl_id` Serial,
+  `insignia_id` Serial,
+  `skill_id` Serial,
+  `equipment_id` Serial,
+  `inscription_id` Serial,
+  `enchantment_id` Serial,
+  `trait_bonus_id` Serial,
+  `destiny_id` Serial,
+  `trait_build_id` Serial,
+  `brakethrough_id` Serial,
+  `title_id` Int,
+  PRIMARY KEY (`id`)
+)
+;
+
+CREATE INDEX `IX_Relationship6` ON `builds` (`hero_id`)
+;
+
+CREATE INDEX `IX_Relationship7` ON `builds` (`talent_id`)
+;
+
+CREATE INDEX `IX_Relationship8` ON `builds` (`lvl_id`)
+;
+
+CREATE INDEX `IX_Relationship9` ON `builds` (`insignia_id`)
+;
+
+CREATE INDEX `IX_Relationship10` ON `builds` (`skill_id`)
+;
+
+CREATE INDEX `IX_Relationship13` ON `builds` (`equipment_id`)
+;
+
+CREATE INDEX `IX_Relationship14` ON `builds` (`inscription_id`)
+;
+
+CREATE INDEX `IX_Relationship15` ON `builds` (`enchantment_id`)
+;
+
+CREATE INDEX `IX_Relationship28` ON `builds` (`trait_bonus_id`)
+;
+
+CREATE INDEX `IX_Relationship30` ON `builds` (`destiny_id`)
+;
+
+CREATE INDEX `IX_Relationship31` ON `builds` (`trait_build_id`)
+;
+
+CREATE INDEX `IX_Relationship40` ON `builds` (`brakethrough_id`)
+;
+
+-- Table hero_skills
+
+CREATE TABLE `hero_skills`
+(
+  `id` Serial NOT NULL,
+  `name` Varchar(30) NOT NULL,
+  `description` Varchar(1000) NOT NULL,
+  `img_url` Varchar(100) NOT NULL,
+  `level` Int NOT NULL,
+  `attack` Int,
+  `acc` Int,
+  `crit` Int,
+  `crit_res` Int,
+  `hp` Int,
+  `dodge` Int,
+  `crit_dmg` Int,
+  `dmg_cap` Int,
+  `dmg_cap_ref` Int,
+  `max_hp_atk` Int,
+  `dmg_red` Int,
+  PRIMARY KEY (`id`)
+)
+;
+
+-- Table inscriptions
+
+CREATE TABLE `inscriptions`
+(
+  `id` Serial NOT NULL,
+  `level` Int NOT NULL,
+  `atk` Int NOT NULL,
+  `hp` Int NOT NULL,
+  PRIMARY KEY (`id`)
+)
+;
+
+-- Table equipment
+
+CREATE TABLE `equipment`
+(
+  `id` Serial NOT NULL,
+  `name` Varchar(40) NOT NULL,
+  `level` Int NOT NULL,
+  `atk` Int NOT NULL,
+  `hp` Int NOT NULL,
+  PRIMARY KEY (`id`)
+)
+;
+
+-- Table enchantments
+
+CREATE TABLE `enchantments`
+(
+  `id` Serial NOT NULL,
+  `name` Varchar(50) NOT NULL,
+  `Description` Varchar(500) NOT NULL,
+  `img_url` Varchar(100) NOT NULL,
+  `level` Int NOT NULL,
+  `attack` Int,
+  `acc` Int,
+  `crit` Int,
+  `crit_res` Int,
+  `hp` Int,
+  `dodge` Int,
+  `crit_dmg` Int,
+  `dmg_cap` Int,
+  `dmg_cap_ref` Int,
+  `max_hp_atk` Int,
+  `dmg_red` Int,
+  PRIMARY KEY (`id`)
+)
+;
+
+-- Table trait_bonuses
+
+CREATE TABLE `trait_bonuses`
+(
+  `id` Serial NOT NULL,
+  `conditions` Varchar(250) NOT NULL,
+  `atk` Int NOT NULL,
+  `hp` Int NOT NULL,
+  `acc` Int,
+  `ench_lvl` Int,
+  PRIMARY KEY (`id`)
+)
+;
+
+-- Table traits
+
+CREATE TABLE `traits`
+(
+  `id` Serial NOT NULL,
+  `name` Varchar(20) NOT NULL,
+  `level` Int NOT NULL,
+  `amount` Int NOT NULL,
+  PRIMARY KEY (`id`)
+)
+;
+
+-- Table trait_builds
+
+CREATE TABLE `trait_builds`
+(
+  `id` Serial NOT NULL,
+  `trait1_id` Serial NOT NULL,
+  `trait2_id` Serial NOT NULL,
+  `trait3_id` Serial NOT NULL,
+  `trait4_id` Serial NOT NULL,
+  `trait5_id` Serial NOT NULL,
+  `trait6_id` Serial NOT NULL,
+  `super1_id` Serial,
+  `super2_id` Int,
+  PRIMARY KEY (`id`)
+)
+;
+
+CREATE INDEX `IX_Relationship16` ON `trait_builds` (`trait1_id`)
+;
+
+CREATE INDEX `IX_Relationship18` ON `trait_builds` (`trait2_id`)
+;
+
+CREATE INDEX `IX_Relationship21` ON `trait_builds` (`trait3_id`)
+;
+
+CREATE INDEX `IX_Relationship22` ON `trait_builds` (`trait4_id`)
+;
+
+CREATE INDEX `IX_Relationship23` ON `trait_builds` (`trait5_id`)
+;
+
+CREATE INDEX `IX_Relationship24` ON `trait_builds` (`trait6_id`)
+;
+
+CREATE INDEX `IX_Relationship25` ON `trait_builds` (`super1_id`)
+;
+
+CREATE INDEX `IX_Relationship26` ON `trait_builds` (`super2_id`)
+;
+
+-- Table superior_traits
+
+CREATE TABLE `superior_traits`
+(
+  `id` Serial NOT NULL,
+  `name` Varchar(20) NOT NULL,
+  `level` Int NOT NULL,
+  `amount` Int NOT NULL,
+  PRIMARY KEY (`id`)
+)
+;
+
+-- Table destinys
+
+CREATE TABLE `destinys`
+(
+  `id` Serial NOT NULL,
+  `score` Int NOT NULL,
+  `level` Int NOT NULL,
+  `hp` Int,
+  `atk` Int,
+  `crit_res` Int,
+  `dodge` Int,
+  `acc` Int,
+  `crit` Int,
+  `skill_lvl` Int,
+  PRIMARY KEY (`id`)
+)
+;
+
+-- Table wardens
+
+CREATE TABLE `wardens`
+(
+  `id` Serial NOT NULL,
+  `name` Varchar(20) NOT NULL,
+  `level` Int NOT NULL,
+  `skill_id` Serial NOT NULL,
+  `subdues_id` Serial NOT NULL,
+  `subdued_id` Serial NOT NULL,
+  `blessing_id` Int NOT NULL,
+  PRIMARY KEY (`id`)
+)
+;
+
+CREATE INDEX `IX_Relationship33` ON `wardens` (`skill_id`)
+;
+
+CREATE INDEX `IX_Relationship34` ON `wardens` (`subdues_id`)
+;
+
+CREATE INDEX `IX_Relationship35` ON `wardens` (`subdued_id`)
+;
+
+CREATE INDEX `IX_Relationship37` ON `wardens` (`blessing_id`)
+;
+
+-- Table warden_skills
+
+CREATE TABLE `warden_skills`
+(
+  `id` Serial NOT NULL,
+  `level` Int NOT NULL,
+  `description` Varchar(1000) NOT NULL,
+  `warden_id` Int NOT NULL,
+  PRIMARY KEY (`id`)
+)
+;
+
+CREATE INDEX `IX_Relationship32` ON `warden_skills` (`warden_id`)
+;
+
+-- Table blessings
+
+CREATE TABLE `blessings`
+(
+  `id` Serial NOT NULL,
+  `level` Int NOT NULL,
+  `attack` Int,
+  `acc` Int,
+  `crit` Int,
+  `crit_res` Int,
+  `hp` Int,
+  `dodge` Int,
+  `crit_dmg` Int,
+  `warden_id` Int NOT NULL,
+  PRIMARY KEY (`id`)
+)
+;
+
+CREATE INDEX `IX_Relationship36` ON `blessings` (`warden_id`)
+;
+
+-- Table brakethroughs
+
+CREATE TABLE `brakethroughs`
+(
+  `id` Serial NOT NULL,
+  `level` Int NOT NULL,
+  `sub_lvl` Int,
+  `attack` Int,
+  `hp` Int,
+  `acc` Int,
+  `dodge` Int,
+  `crit` Int,
+  `crit_res` Int,
+  PRIMARY KEY (`id`)
+)
+;
+
+-- Table titles
+
+CREATE TABLE `titles`
+(
+  `id` Serial NOT NULL,
+  `atk` Int,
+  `hp` Int,
+  `acc` Int,
+  `dodge` Int,
+  `crit` Int,
+  `crit_dmg` Int,
+  `crit_res` Int,
+  PRIMARY KEY (`id`)
+)
+;
+
+-- Create foreign keys (relationships) section -------------------------------------------------
+
+ALTER TABLE `heros` ADD CONSTRAINT `Relationship39` FOREIGN KEY (`warden_id`) REFERENCES `wardens` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `builds` ADD CONSTRAINT `Relationship41` FOREIGN KEY (`title_id`) REFERENCES `titles` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `builds` ADD CONSTRAINT `Relationship40` FOREIGN KEY (`brakethrough_id`) REFERENCES `brakethroughs` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `wardens` ADD CONSTRAINT `Relationship37` FOREIGN KEY (`blessing_id`) REFERENCES `blessings` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `blessings` ADD CONSTRAINT `Relationship36` FOREIGN KEY (`warden_id`) REFERENCES `wardens` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `wardens` ADD CONSTRAINT `Relationship35` FOREIGN KEY (`subdued_id`) REFERENCES `wardens` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `wardens` ADD CONSTRAINT `Relationship34` FOREIGN KEY (`subdues_id`) REFERENCES `wardens` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `wardens` ADD CONSTRAINT `Relationship33` FOREIGN KEY (`skill_id`) REFERENCES `warden_skills` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `warden_skills` ADD CONSTRAINT `Relationship32` FOREIGN KEY (`warden_id`) REFERENCES `wardens` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `builds` ADD CONSTRAINT `Relationship31` FOREIGN KEY (`trait_build_id`) REFERENCES `trait_builds` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `builds` ADD CONSTRAINT `Relationship30` FOREIGN KEY (`destiny_id`) REFERENCES `destinys` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `builds` ADD CONSTRAINT `Relationship28` FOREIGN KEY (`trait_bonus_id`) REFERENCES `trait_bonuses` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `trait_builds` ADD CONSTRAINT `Relationship26` FOREIGN KEY (`super2_id`) REFERENCES `superior_traits` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `trait_builds` ADD CONSTRAINT `Relationship25` FOREIGN KEY (`super1_id`) REFERENCES `superior_traits` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `trait_builds` ADD CONSTRAINT `Relationship24` FOREIGN KEY (`trait6_id`) REFERENCES `traits` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `trait_builds` ADD CONSTRAINT `Relationship23` FOREIGN KEY (`trait5_id`) REFERENCES `traits` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `trait_builds` ADD CONSTRAINT `Relationship22` FOREIGN KEY (`trait4_id`) REFERENCES `traits` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `trait_builds` ADD CONSTRAINT `Relationship21` FOREIGN KEY (`trait3_id`) REFERENCES `traits` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `trait_builds` ADD CONSTRAINT `Relationship18` FOREIGN KEY (`trait2_id`) REFERENCES `traits` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `trait_builds` ADD CONSTRAINT `Relationship16` FOREIGN KEY (`trait1_id`) REFERENCES `traits` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `builds` ADD CONSTRAINT `Relationship15` FOREIGN KEY (`enchantment_id`) REFERENCES `enchantments` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `builds` ADD CONSTRAINT `Relationship14` FOREIGN KEY (`inscription_id`) REFERENCES `inscriptions` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `builds` ADD CONSTRAINT `Relationship13` FOREIGN KEY (`equipment_id`) REFERENCES `equipment` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `builds` ADD CONSTRAINT `Relationship10` FOREIGN KEY (`skill_id`) REFERENCES `hero_skills` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `builds` ADD CONSTRAINT `Relationship9` FOREIGN KEY (`insignia_id`) REFERENCES `talents` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `builds` ADD CONSTRAINT `Relationship8` FOREIGN KEY (`lvl_id`) REFERENCES `hero_lvl` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `builds` ADD CONSTRAINT `Relationship7` FOREIGN KEY (`talent_id`) REFERENCES `talents` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `builds` ADD CONSTRAINT `Relationship6` FOREIGN KEY (`hero_id`) REFERENCES `heros` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+ALTER TABLE `heros` ADD CONSTRAINT `Relationship11` FOREIGN KEY (`skill_id`) REFERENCES `hero_skills` (`id`) ON DELETE RESTRICT ON UPDATE RESTRICT
+;
+
+
