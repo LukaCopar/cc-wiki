@@ -8,5 +8,6 @@
 
 	<body>
 	    <h1>ayy</h1>
+		<a href="./insert.php">INSERT</a>
 	</body>
 </html>
