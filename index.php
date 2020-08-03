@@ -22,7 +22,7 @@
 			<!-- Header -->
 			<div id="header" class="navbar">
 				<div id="logo">
-					<h1><a href="index.html">Phase Shift</a></h1>
+					<h1><a href="index.php">Phase Shift</a></h1>
 					<span class="tag">by TEMPLATED</span>
 				</div>
 				<ul id="navbar" class="menu align-center">
