@@ -69,37 +69,17 @@
 	.\-1u { margin-left: 8.3333333333% }
 
 	/* Rows */
-
-		.row > * {
-			float: left;
+		.row {
+			width: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-end;
 		}
-
-		.row:after {
-			content: '';
-			display: block;
-			clear: both;
-			height: 0;
-		}
-
-		.row:first-child > * {
-			padding-top: 0 !important;
-		}
-
 		/* Normal */
-
-			.row > * {
-				/* padding-left: (gutters) */
-				padding-left: 40px;
-			}
 
 			.row + .row > * {
 				/* padding: (gutters) 0 0 (gutters) */
 				padding: 40px 0 0 40px;
-			}
-
-			.row {
-				/* margin-left: -(gutters) */
-				margin-left: -40px;
 			}
 
 		/* Flush */
