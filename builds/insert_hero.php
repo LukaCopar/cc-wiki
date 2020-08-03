@@ -9,26 +9,13 @@
 	    <title>Insert Hero</title>
 		<link rel="stylesheet" href="../css/style.css" type="text/css">
 		<script src="../js/index.js"></script>
-		<style>
-		input{
-			margin: 5px;
-		}
-		select{
-		width: 100%;
-		border: none;
-		height: 3.4em;
-		border-radius: 6px;
-		margin-left: 5px;
-		
-		}
-		</style>
 
 
 	</head>
 
 	<body>
 	   <h1>INSERT HEROES</h1> </br>
-	   <div>
+	   <div class="insert-field">
 	<form action="./insert_hero_b.php" method="post" enctype="multipart/form-data">
 
   <input name="name" type="text" placeholder="name"/>
@@ -61,7 +48,7 @@
 
   
   <br><br>
-  <input type="submit" value="submit">
+  <input class="submit" type="submit" value="submit">
 </form>
 </div>
 
@@ -75,7 +62,7 @@
 		 <div>
 		 <?php
 		 echo $row['name'];
-		 echo " ";
+		 echo " | ";
 		 echo $row['biography'];
 		 ?>
 		 </div>
