@@ -95,7 +95,7 @@ select {
 .item {
 	overflow: hidden;
 	position: center;
-	padding: 1.5em !important;
+	padding-top: 1.5em !important;
 	color: #474747 !important;
 	width: 100%;
 	height: 100%;

@@ -26,7 +26,7 @@
 					<span class="tag">by TEMPLATED</span>
 				</div>
 				<ul id="navbar" class="menu align-center">
-					<li class="nav-item" style="background-color: #a0a0a0"><a class="item" href="#">Heroes</a></li>
+					<li class="nav-item"><a class="item" href="#">Heroes</a></li>
 					<li class="nav-item"><a class="item" href="#">Talents</a></li>
 					<li class="nav-item"><a class="item" href="#">Pets</a></li>
 					<li class="nav-item"><a class="item" href="#">IDK smthn</a></li>
