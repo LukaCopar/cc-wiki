@@ -81,6 +81,7 @@ select {
 		
 	}
 .nav-item {
+	height: 100%;
 	color: #474747;
 	margin: 0;
 	transition: background-color .5s;
