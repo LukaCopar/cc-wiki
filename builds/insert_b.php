@@ -40,6 +40,6 @@ $title_id;
 
 
 
-	//header('Location: ./insert.php');
+	header('Location: ./insert.php');
 	
 	?>
