@@ -1,12 +1,7 @@
 <?php
 	require './php/connection.php';
-	$conn = OpenCon();
 
-
-	$query="SELECT name FROM talents";
-	$resultset = $conn->query($query);
-
-	//echo(mysqli_num_rows($resultset));
+	
 	?>
 	
 	<html>
@@ -18,19 +13,156 @@
 	</head>
 
 	<body>
-	    <h1>INSERT HEROES</h1> </br>
-		<form action="/action_page.php">
-  <label for="cars">Talent:</label>
-  <select name="cars" id="cars">
+	   <h1>INSERT HEROES</h1> </br>
 
+		<form action="./insert_b.php" method="post" enctype="multipart/form-data">
+
+  <label>Talent:</label>
+  <select name="talent" id="talent">
   <?php 
-	 while($rows = $resultset->fetch_assoc()){
-	foreach ($rows as $row){
+  $query = "SELECT name FROM talents";
+  $stmt = $pdo ->query($query);
+	foreach ($stmt as $row){
 	?>
-	 <option value="<?php echo($row); ?>" > <?php echo($row);} ?></option> <?php } ?>
+	 <option name="talent" value="<?php echo($row['name']); ?>" > <?php echo($row['name']);} 
+	 ?></option>
   </select>
+
+  <select name="talent" id="talent">
+  <?php 
+  $query = "SELECT name FROM talents";
+  $stmt = $pdo ->query($query);
+	foreach ($stmt as $row){
+	?>
+	 <option name="talent" value="<?php echo($row['name']); ?>" > <?php echo($row['name']);} 
+	 ?></option>
+  </select>
+
+
+  <select name="talent" id="talent">
+  <?php 
+  $query = "SELECT name FROM talents";
+  $stmt = $pdo ->query($query);
+	foreach ($stmt as $row){
+	?>
+	 <option name="talent" value="<?php echo($row['name']); ?>" > <?php echo($row['name']);} 
+	 ?></option>
+  </select>
+
+
+  <select name="talent" id="talent">
+  <?php 
+  $query = "SELECT name FROM talents";
+  $stmt = $pdo ->query($query);
+	foreach ($stmt as $row){
+	?>
+	 <option name="talent" value="<?php echo($row['name']); ?>" > <?php echo($row['name']);} 
+	 ?></option>
+  </select>
+
+
+  <select name="talent" id="talent">
+  <?php 
+  $query = "SELECT name FROM talents";
+  $stmt = $pdo ->query($query);
+	foreach ($stmt as $row){
+	?>
+	 <option name="talent" value="<?php echo($row['name']); ?>" > <?php echo($row['name']);} 
+	 ?></option>
+  </select>
+
+
+  <select name="talent" id="talent">
+  <?php 
+  $query = "SELECT name FROM talents";
+  $stmt = $pdo ->query($query);
+	foreach ($stmt as $row){
+	?>
+	 <option name="talent" value="<?php echo($row['name']); ?>" > <?php echo($row['name']);} 
+	 ?></option>
+  </select>
+
+
+  <select name="talent" id="talent">
+  <?php 
+  $query = "SELECT name FROM talents";
+  $stmt = $pdo ->query($query);
+	foreach ($stmt as $row){
+	?>
+	 <option name="talent" value="<?php echo($row['name']); ?>" > <?php echo($row['name']);} 
+	 ?></option>
+  </select>
+
+
+  <select name="talent" id="talent">
+  <?php 
+  $query = "SELECT name FROM talents";
+  $stmt = $pdo ->query($query);
+	foreach ($stmt as $row){
+	?>
+	 <option name="talent" value="<?php echo($row['name']); ?>" > <?php echo($row['name']);} 
+	 ?></option>
+  </select>
+
+
+  <select name="talent" id="talent">
+  <?php 
+  $query = "SELECT name FROM talents";
+  $stmt = $pdo ->query($query);
+	foreach ($stmt as $row){
+	?>
+	 <option name="talent" value="<?php echo($row['name']); ?>" > <?php echo($row['name']);} 
+	 ?></option>
+  </select>
+
+
+  <select name="talent" id="talent">
+  <?php 
+  $query = "SELECT name FROM talents";
+  $stmt = $pdo ->query($query);
+	foreach ($stmt as $row){
+	?>
+	 <option name="talent" value="<?php echo($row['name']); ?>" > <?php echo($row['name']);} 
+	 ?></option>
+  </select>
+
+
+  <select name="talent" id="talent">
+  <?php 
+  $query = "SELECT name FROM talents";
+  $stmt = $pdo ->query($query);
+	foreach ($stmt as $row){
+	?>
+	 <option name="talent" value="<?php echo($row['name']); ?>" > <?php echo($row['name']);} 
+	 ?></option>
+  </select>
+
+
+  <select name="talent" id="talent">
+  <?php 
+  $query = "SELECT name FROM talents";
+  $stmt = $pdo ->query($query);
+	foreach ($stmt as $row){
+	?>
+	 <option name="talent" value="<?php echo($row['name']); ?>" > <?php echo($row['name']);} 
+	 ?></option>
+  </select>
+
+
+  <select name="talent" id="talent">
+  <?php 
+  $query = "SELECT name FROM talents";
+  $stmt = $pdo ->query($query);
+	foreach ($stmt as $row){
+	?>
+	 <option name="talent" value="<?php echo($row['name']); ?>" > <?php echo($row['name']);} 
+	 ?></option>
+  </select>
+
+
+
   <br><br>
-  <input type="submit" value="Submit">
+  <input type="submit" value="submit">
 </form>
 
 
@@ -42,5 +174,4 @@
 
 
 	<?php
-	CloseCon($conn);
 ?>
