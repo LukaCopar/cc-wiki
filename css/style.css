@@ -74,20 +74,30 @@ select {
 		position: fixed;
 		width: 100%;
 		bottom: 0px;
-		display: flex;
-		justify-content: space-evenly;
+		margin: 0;
 		overflow: hidden;
 		background-color: #0f1116;
-		color: #474747;
-	}
-	.nav-item {
 		
 	}
+.nav-item {
+	color: #474747;
+	margin: 0;
+	transition: background-color .5s;
+}
 
-	.item {
-		color: #575757 !important;
-		line-height: 200px;
+	.nav-item:hover {
+		background-color: #a0a0a0;
+		transition: background-color .5s;
+		margin: 0;
 	}
+
+.item {
+	color: #474747 !important;
+	width: 100%;
+	height: 100%;
+	padding-top: 10% !important;
+	font-weight: 700;
+}
 
 	li {
 		text-align: center;
@@ -97,7 +107,6 @@ select {
 	}
 
 	.nav-item.active{
-		background-color: #a0a0a0;
 	}
 
 	.row {
