@@ -37,7 +37,12 @@
 			<!-- Extra -->
 			<div id="extra">
 				<div class="container">
-					<div class="row">						
+					<div class="row">
+						<div class="hero">
+							<?php 
+								require 'php/heroes.php'
+							?>	
+						</div>					
 						<div class="hero">
 							<p>1Donec leo, vivamus fermentum nibh in augue praesent a lacus at urna congue rutrum  wisi maecenas ligula.</p>
 							<a href="#" class="button">Read More</a> 
