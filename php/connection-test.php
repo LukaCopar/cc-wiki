@@ -5,6 +5,6 @@
 	$test = "SELECT * FROM traits;";
 	$result = $conn->query($test);
 	//echo(var_dump($result));
-	echo($result->fetch_assoc()["amount"]);
+	//echo($result->fetch_assoc()["amount"]);
 	CloseCon($conn);
 ?>
