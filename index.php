@@ -26,10 +26,10 @@
 					<span class="tag">by TEMPLATED</span>
 				</div>
 				<ul id="navbar" class="menu align-center">
-					<li><a class="nav-item active" href="#">Heroes</a></li>
-					<li><a class="nav-item" href="#">Talents</a></li>
-					<li><a class="nav-item" href="#">Pets</a></li>
-					<li><a class="nav-item" href="#">IDK smthn</a></li>
+					<li class="nav-item" style="background-color: #a0a0a0"><a class="item" href="#">Heroes</a></li>
+					<li class="nav-item"><a class="item" href="#">Talents</a></li>
+					<li class="nav-item"><a class="item" href="#">Pets</a></li>
+					<li class="nav-item"><a class="item" href="#">IDK smthn</a></li>
 				</ul>
 			</div>
 			<!-- Extra -->
