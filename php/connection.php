@@ -1,5 +1,5 @@
 <?php
-		$dbhost = "192.168.1.12";
+		$dbhost = "192.168.1.11";
 		$dbuser = "cc-wiki";
 		$dbpass = "";
 		$db = "cc-wiki";
