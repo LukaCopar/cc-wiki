@@ -43,6 +43,11 @@
 							require 'php/heroes.php'
 						?>					
 					</div>
+					<div class="row">
+						<?php 
+							require 'php/hero.php'
+						?>					
+					</div>
 				</div>
 			</div>
 
