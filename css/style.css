@@ -160,10 +160,9 @@ select {
 	height: 99% !important;
 	overflow: hidden;
 	margin-left: 10px;
-
-
 	display: inline-block;
 	vertical-align: middle;
+	text-align: center;
 }
 
 .hero_stats {
@@ -216,7 +215,8 @@ select {
 
 #hero {
 	margin: 10px;
-
+	height 200vw;
+	overflow: hidden;
 
 }
 
