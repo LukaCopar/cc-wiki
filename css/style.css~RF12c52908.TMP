@@ -1,10 +1,4 @@
 
-
-@keyframes navbar{
-	0% {color: gray;  }
-	100% {color: white;  }
-}
-
 body {
 	background-color: #0f1116;
 	color: wheat;
@@ -76,30 +70,27 @@ select {
 		bottom: 45px;
 	}
 
-#navbar {
-	position: fixed;
-	width: 100%;
-	bottom: 0px;
-	margin: 0;
-	overflow: hidden;
-	background-color: #1c1f26;
-	height: 4em;
-}
+	#navbar {
+		position: fixed;
+		width: 100%;
+		bottom: 0px;
+		margin: 0;
+		overflow: hidden;
+		background-color: dimgray;
+		height: 4em;
+		
+	}
 .nav-item {
 	height: 100%;
-	color: gray;
+	color: #474747;
 	margin: 0;
 	transition: background-color .5s;
 	border-left: .1em solid gray;
 }
 
 	.nav-item:hover {
-		background-color: #27292d;
-		color: whitesmoke;
+		background-color: gray;
 		transition: background-color .5s;
-		animation-name: navbar;
-		animation-duration: .5s;
-
 	}
 
 .item {
