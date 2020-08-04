@@ -211,11 +211,11 @@ select {
 	font-weight: 600;
 	text-align: justify;
 	font-size: 1vw;
+	max-width: 80%;
 }
 
 #hero {
 	margin: 10px;
-	height 200vw;
 	overflow: hidden;
 
 }

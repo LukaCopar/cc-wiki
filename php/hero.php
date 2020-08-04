@@ -30,7 +30,13 @@
 	$lmao = $pdo->query($query);
 	$skill = $lmao->fetch();
 
+
 	$skill_lvl = 1;
+
+	//echo($_POST['skill_lvl']);
+
+	if(isset($_POST['skill_lvl']))
+	$skill_lvl = $_POST['skill_lvl'];
 
 
 	//print_r($skill);
@@ -87,17 +93,22 @@
 		<div class="skill_stats">
 			<div class="skill_desc">
 				<?php
-
 				$query = 'SELECT * FROM hero_skills WHERE (hero_id = '.$id.' AND level = '.$skill_lvl.')';
 				$lmao = $pdo->query($query);
 				$hero_skill = $lmao->fetch();
 				//print_r($hero_skill);
-
-				echo($skill['description'])
+				echo($hero_skill['description'])
 				?>
+
+				
 			</div>
+			<form action=""  method="post" enctype="multipart/form-data">
+					<input type="number" id="skill_lvl" name="skill_lvl" min="1" max="15"/>
+					<input type="submit" value="accept" class="submit">
+				</form>
 			</div>
 		</div>
+		
 		</div>
 	</body>
 </html>
