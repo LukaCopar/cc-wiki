@@ -4,7 +4,7 @@ window.onload = () => {
 		$.ajax({
 			url: "/php/talents.php"
 		}).done((content) => {
-			console.log(content);
+			//console.log(content);
 			txt += content;
 			txt += "</div></div>";
 			$("#content").html(txt);
@@ -16,7 +16,7 @@ window.onload = () => {
 		$.ajax({
 			url: "/php/heroes.php"
 		}).done((content) => {
-			console.log(content);
+			//console.log(content);
 			txt += content;
 			txt += "</div></div>";
 			$("#content").html(txt);

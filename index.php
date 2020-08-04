@@ -29,7 +29,7 @@
 					<span class="tag">by Gašper and Luka</span>
 				</div>
 				<ul id="navbar" class="menu align-center">
-					<li class="nav-item"><a class="item" href="#">Heroes</a></li>
+					<li id="heroes" class="nav-item"><a class="item" href="#">Heroes</a></li>
 					<li id="talents" class="nav-item"><a class="item" href="#">Talents</a></li>
 					<li class="nav-item"><a class="item" href="#">Pets</a></li>
 					<li class="nav-item"><a class="item" href="#">IDK smthn</a></li>
@@ -45,7 +45,7 @@
 					</div>
 					<div class="row">
 						<?php 
-							require 'php/hero.php'
+							//require 'php/hero.php'
 						?>					
 					</div>
 				</div>
