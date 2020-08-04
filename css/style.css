@@ -1,8 +1,14 @@
 
 
-@keyframes navbar{
-	0% {color: gray;  }
-	100% {color: white;  }
+@keyframes navbar1{
+	0% {color: gray;}
+	100% {color: white;}
+}
+
+a {
+	text-decoration: none;
+
+
 }
 
 body {
@@ -90,15 +96,11 @@ select {
 	color: gray;
 	margin: 0;
 	transition: background-color .5s;
-	border-left: .1em solid gray;
 }
 
 	.nav-item:hover {
 		background-color: #27292d;
-		color: whitesmoke;
 		transition: background-color .5s;
-		animation-name: navbar;
-		animation-duration: .5s;
 
 	}
 
@@ -106,12 +108,20 @@ select {
 	overflow: hidden;
 	position: center;
 	padding-top: 1.5em !important;
-	color: #474747 !important;
+	color: #474747;
 	width: 100%;
 	height: 100%;
 	vertical-align: middle;
 	font-weight: 700;
 }
+
+	.item:hover {
+		animation-name: navbar1;
+		animation-duration: .5s;
+		animation-fill-mode: forwards;
+	}
+
+
 
 	li {
 		text-align: center;
@@ -132,3 +142,99 @@ select {
 		width: 80%;
 		margin: auto;
 	}
+
+	.hero1 {
+		overflow: hidden;
+		display: flex;
+		color: gray;
+		width: 100%;
+		height: 20vw;
+		margin: auto;
+		background-color: none;
+		padding-top: 20px;
+	}
+
+.hero_img {
+	float: left;
+	width: 20%;
+	height: 99% !important;
+	overflow: hidden;
+	margin-left: 10px;
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+}
+
+.hero_stats {
+	overflow: auto;
+	flex-wrap: wrap;
+	flex-direction: column;
+	display: flex;
+	position: relative;
+	float: right;
+	width: 75%;
+	height: 100% !important;
+	max-width: 100%;
+}
+
+	.hero_stats > div {
+		height: 2vw;
+		max-width: 50%;
+		font-family: Arial;
+		font-weight: 600;
+	}
+
+
+
+
+.stat_img {
+	display: inline-block;
+	vertical-align: middle;
+	height: 100%;
+	padding-right: 10px;
+}
+
+
+.skill_stats {
+	flex-wrap: wrap;
+	flex-direction: column;
+	display: flex;
+	position: relative;
+	float: right;
+	width: 75%;
+	height: 100% !important;
+}
+
+.skill_desc {
+	height: 100%;
+	font-family: Arial;
+	font-weight: 600;
+	text-align: justify;
+	font-size: 1vw;
+	max-width: 80%;
+}
+
+#hero {
+	margin: 10px;
+	overflow: hidden;
+
+}
+
+.skill1 {
+	overflow: auto;
+	display: flex;
+	color: gray;
+	width: 100%;
+	max-height: 20vw;
+	margin: auto;
+	background-color: none;
+	padding-top: 20px;
+}
+
+
+.stat {
+	font-size: 1.3vw;
+	margin: 2px;
+
+
+}
