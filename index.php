@@ -25,8 +25,8 @@
 			<!-- Header -->
 			<div id="header" class="navbar">
 				<div id="logo">
-					<h1><a href="index.php">Phase Shift</a></h1>
-					<span class="tag">by TEMPLATED</span>
+					<h1><a href="index.php">CC Calculator</a></h1>
+					<span class="tag">by Gašper and Luka</span>
 				</div>
 				<ul id="navbar" class="menu align-center">
 					<li class="nav-item"><a class="item" href="#">Heroes</a></li>
