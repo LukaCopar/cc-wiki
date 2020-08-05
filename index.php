@@ -26,30 +26,21 @@
 				<h1><a href="index.php">CC Calculator</a></h1>
 				<span class="tag">by Gašper and Luka</span>
 			</div>
-			<ul id="navbar" class="menu align-center">
-				<li id="heroes" class="nav-item"><a class="item" href="#">Heroes</a></li>
-				<li id="talents" class="nav-item"><a class="item" href="#">Talents</a></li>
-				<li class="nav-item"><a class="item" href="#">Pets</a></li>
-				<li class="nav-item"><a class="item" href="#">IDK smthn</a></li>
-			</ul>
 		</div>
 		<!-- Extra -->
 		<div id="content">
-			<div class="container">
-				<div class="row">
-					<?php
-					require 'php/heroes.php'
-					?>
-				</div>
-				<div class="row">
-					<?php
-					//require 'php/hero.php'
-					?>
-				</div>
+			<div class="container-heros">
+				<?php
+				require 'php/heroes.php'
+				?>
 			</div>
 		</div>
-
 	</div>
+
+	<?php
+	require 'inc/nav.html';
+
+	?>
 </body>
 
 </html>
