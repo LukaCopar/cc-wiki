@@ -1,11 +1,11 @@
 <?php
 
-include_once './connection.php';
-//include_once '../index.php';
+require './connection.php';
 
 
-//$id = $_POST['id'];
-$id = 1;
+$id = $_GET['hero'];
+//echo ($_GET['hero']);
+//$id = 1;
 
 
 $query = 'SELECT * FROM heros WHERE (id = ' . $id . ')';
@@ -26,6 +26,12 @@ $crit_resist = $xd['crit_resist'];
 $crit_dmg = $xd['crit_dmg'];
 $acc = $xd['acc'];
 
+
+if (isset($xd['img_url'])) {
+	$xd['img_url'] = "../img/zephyrica1.png";
+}
+$url1 = $xd['img_url'];
+
 $query = 'SELECT * FROM hero_skills WHERE (id = ' . $skill_id . ')';
 $lmao = $pdo->query($query);
 $skill = $lmao->fetch();
@@ -42,9 +48,9 @@ if (isset($_POST['skill_lvl']))
 //print_r($skill);
 //echo($skill['img_url']);
 
-$query = 'SELECT * FROM wardens WHERE (id = ' . $warden_id . ')';
-$lmao = $pdo->query($query);
-$warden = $lmao->fetch();
+// $query = 'SELECT * FROM wardens WHERE (id = ' . $warden_id . ')';
+// $lmao = $pdo->query($query);
+// $warden = $lmao->fetch();
 //print_r($warden);
 //echo("<br>");
 
