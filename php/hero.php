@@ -14,7 +14,7 @@ $xd = $lmao->fetch();
 
 $name = $xd['name'];
 $biography = $xd['biography'];
-$skill_id = $xd['skill_id'];
+//$skill_id = $xd['skill_id'];
 $url1 = $xd['img_url'];
 $url2 = $xd['img_url_evo'];
 $warden_id = $xd['warden_id'];
@@ -32,11 +32,11 @@ if (isset($xd['img_url'])) {
 }
 $url1 = $xd['img_url'];
 
-$query = 'SELECT * FROM hero_skills WHERE (id = ' . $skill_id . ')';
+$query = 'SELECT * FROM hero_skills WHERE (hero_id = ' . $id . ')';
 $lmao = $pdo->query($query);
 $skill = $lmao->fetch();
 
-
+//print_r($lmao);
 $skill_lvl = 1;
 
 //echo($_POST['skill_lvl']);
@@ -46,7 +46,7 @@ if (isset($_POST['skill_lvl']))
 
 
 //print_r($skill);
-//echo($skill['img_url']);
+//echo ($skill['img_url'] . "xd");
 
 // $query = 'SELECT * FROM wardens WHERE (id = ' . $warden_id . ')';
 // $lmao = $pdo->query($query);
@@ -76,6 +76,7 @@ $hero = $lmao->fetch();
 
 			<div class="hero_img">
 				<img style="max-height: 100%;" src="<?php echo ($url1);  ?>" alt="nema slike" />
+				<h3><?php echo ($name)  ?></h3>
 			</div>
 
 			<div class="hero_stats">
@@ -92,8 +93,8 @@ $hero = $lmao->fetch();
 		</div>
 		<div class="skill1">
 
-			<div class="hero_img">
-				<img style="max-height: 100%;" src="<?php echo ($skill['img_url']);  ?>" alt="nema slike" />
+			<div class="hero_skill_img">
+				<img style="max-height: 100%;" src="<?php echo $skill['img_url'];  ?>" alt="nema slike" />
 			</div>
 
 			<div class="skill_stats">

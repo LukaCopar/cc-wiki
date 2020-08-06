@@ -6,11 +6,11 @@ while ($xd = $lmao->fetch()) {
 		$xd['img_url'] = "../img/zephyrica1.png";
 	}
 	echo '
-	<button class="hero-open" value="./php/hero.php?hero=' . $xd['id'] . '"> 
+	<form class="hero-open" target="_blank" action="./php/hero.php?hero=' . $xd['id'] . '"> 
 	<div class="hero">
 			<img class="hero-card-img" src="' . $xd['img_url'] . '" alt="jah pac ni slike">
-			<h4>' . $xd['name'] . '</h4>
+			<div><img class="hero-skill-img" src="../img/zephyrica_skill.png"/><h4  class="hero-name"> ' . $xd['name'] . ' </h4></div>
 		</div>
-		</button>
+		</form>
 		';
 }

@@ -5,6 +5,16 @@
 	100% {color: white;}
 }
 
+
+@media(max-width: 600px) {
+
+
+
+}
+
+
+
+
 a {
 	text-decoration: none;
 	color:#474747 !important; 
@@ -75,10 +85,16 @@ select {
 	background-color: #040404;
 }
 	.hero {
+		
+		overflow: hidden;
+		height: 25vw !important;
+		background-color: #27292d;
+		border-radius: 10px;
 		transform: scale(1);
 		transition: transform .3s;
 		text-align: center;
 		cursor: pointer;
+		padding-bottom: .6vw;
 	}
 
 	.hero:hover{
@@ -87,10 +103,27 @@ select {
 	}
 
 	.hero-card-img{
-		margin: auto;
-		padding: 2px;
+		margin: 0 auto;
+		padding: .5vw;
 		height: auto;
 		width: 100%;;
+	}
+	.hero-skill-img{
+		margin-left: 0;
+		height: 3vw;
+
+	}
+
+	.hero-name{
+		font-size: 1.6vw;
+		text-align: center;
+		float: right;
+		width: 10vw;
+		height: auto;
+		margin: 0vw auto;
+		margin-top: .5vw;
+		border-radius: 5px;
+		background-color: #27292d;
 	}
 
 	#move {
@@ -168,16 +201,18 @@ select {
 		display: flex;
 		padding-bottom: 4em;
 	}
-	.container-heros > button{
+	.container-heros > form{
 		width: 15vw;
-		max-height: 25vw;
 		font-family: Arial;
+		display: inline-block;
 		font-weight: 600;
 		justify-content: space-evenly;
 		color: whitesmoke;
 		text-align: center;
-		margin: 0 auto;
+		margin: 10px auto;
 	}
+
+	
 
 	button{
 		text-decoration: none !important;
@@ -198,7 +233,9 @@ select {
 	}
 
 .hero_img {
-	float: left;
+	background-color: #474747;
+	padding: 1vw;
+	border-radius: 10px;
 	width: 20%;
 	height: 99% !important;
 	overflow: hidden;
@@ -207,21 +244,30 @@ select {
 	vertical-align: middle;
 	text-align: center;
 }
+.hero_skill_img {
+	margin-right: 5vw;
+	padding: 1vw;
+	width: 15vw;
+	height: 9vw;
+	vertical-align: middle;
+	text-align: right;
+}
 
 .hero_stats {
+	padding-left: 5vw;;
 	overflow: auto;
 	flex-wrap: wrap;
 	flex-direction: column;
 	display: flex;
 	float: right;
 	width: 75%;
-	height: 100% !important;
+	height: 25vw !important;
 	max-width: 100%;
 }
 
 	.hero_stats > div {
 		height: 2vw;
-		max-width: 50%;
+		max-width: 49%;
 		font-family: Arial;
 		font-weight: 600;
 	}
@@ -300,6 +346,8 @@ select {
 	justify-content: space-evenly;
 	color: whitesmoke !important;
 	overflow: auto;
+	margin: 10px auto;
+	padding: 1vw;
 }
 
 .talent-img{
@@ -316,6 +364,12 @@ padding-bottom: 1vw;
 	transition: transform .3s;
 	text-align: center;
 	cursor: pointer;
+
+	background-color: #27292d;
+		padding-bottom: .6vw;
+		border-radius: 10px;
+
+
 }
 
 .talent:hover{
