@@ -339,7 +339,7 @@ select {
 	padding-bottom: 4em;
 }
 
-.container-talents > div{
+.container-talents > span{
 	width: 15vw;
 	max-height: 35vw;
 	font-family: Arial;
@@ -353,7 +353,6 @@ select {
 .talent-img{
 
 padding-bottom: 1vw;
-
 }
 	
 
@@ -364,6 +363,8 @@ padding-bottom: 1vw;
 	transition: transform .3s;
 	text-align: center;
 	cursor: pointer;
+	overflow: hidden;
+	width: 200px;
 
 	background-color: #27292d;
 		padding-bottom: .6vw;
@@ -376,4 +377,12 @@ padding-bottom: 1vw;
 	transform: scale(1.02);
 	transition: transform .1s;
 }
+
+.talent-lvl{
+	color: whitesmoke !important;
+	font-size: 3vw;
+}
+
+
+
 

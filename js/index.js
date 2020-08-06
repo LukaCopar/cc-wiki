@@ -32,7 +32,7 @@ window.onload = () => {
 	$(".hero-open").click(function (e) {
 		e.preventDefault();
 		var txt = '<div class="container">';
-		console.log($(this)[0].action);
+		//console.log($(this)[0].action);
 		$.ajax({
 			url: $(this)[0].action
 		}).done((content) => {
@@ -48,7 +48,7 @@ window.onload = () => {
 $(document).on("click", ".hero-open", function (e) {
 	e.preventDefault();
 	var txt = '<div class="container">';
-	console.log($(this)[0].action);
+	//console.log($(this)[0].action);
 	$.ajax({
 		url: $(this)[0].action
 	}).done((content) => {
@@ -57,5 +57,20 @@ $(document).on("click", ".hero-open", function (e) {
 		txt += "</div>";
 		$("#title").html("Hero");
 		$("#content").html(txt);
+	});
+});
+
+$(document).on("click", ".hehe", function (e) {
+	e.preventDefault();
+	//console.log($(this)[0].id);
+	$.ajax({
+		url: $(this)[0].href
+	}).done((content) => {
+		//console.log(content);
+		txt = content;
+		talent = "#";
+		talent += $(this)[0].id;
+		//console.log(talent);
+		$(talent).html(txt);
 	});
 });
