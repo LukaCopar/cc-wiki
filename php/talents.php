@@ -31,8 +31,8 @@ while ($xd = $lmao->fetch()) {
 	<img class="talent-img" src="' . $xd['img_url'] . '" alt="no image"/>
 	<div class="talent-lvl">
 	<a id="' . str_replace(' ', '', $xd['name']) . '" href="../php/talent.php?name=' . $xd['name'] . '&la=1&lvl=' . $xd['level'] . '" class="hehe" style="float: left;">+</a>
-	<h3>' . $xd['level'] . '</h3>
 	<a  id="' . str_replace(' ', '', $xd['name']) . '" href="../php/talent.php?name=' . $xd['name'] . '&la=2&lvl=' . $xd['level'] . '" class="hehe" style="float: right;">-</a>
+	<h3>' . $xd['level'] . '</h3>
 	<br>
 	</div>
 			<h4>' . $xd['name'] . '</h4>
