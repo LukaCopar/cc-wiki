@@ -29,14 +29,19 @@ $lmao1 = $pdo->query('SELECT * FROM talents WHERE (name="' . $name . '" AND leve
 $xd = $lmao1->fetch();
 
 echo '
-	<div value="./php/hero.php?talent=' . $xd['id'] . '">
-	<img class="talent-img" src="' . $xd['img_url'] . '" alt="no image"/>
-	<div class="talent-lvl">
-	<a id="' . str_replace(' ', '', $xd['name']) . '" href="../php/talent.php?name=' . $xd['name'] . '&la=1&lvl=' . $xd['level'] . '" class="hehe" style="float: left;">+</a>
-	<a  id="' . str_replace(' ', '', $xd['name']) . '" href="../php/talent.php?name=' . $xd['name'] . '&la=2&lvl=' . $xd['level'] . '" class="hehe" style="float: right;">-</a>
-    <h3>' . $xd['level'] . '</h3>
-    <br>
-	</div>
-			<h4>' . $xd['name'] . '</h4>
-			<p class="kurac">' . $xd['description'] . '</p>
-		</div>';
+<span class="talent" id="' . str_replace(' ', '', $xd['name']) . '">
+<div class="mrs1" value="./php/hero.php?talent=' . $xd['id'] . '">
+<img class="talent-img" src="' . $xd['img_url'] . '" alt="no image"/>
+<div class="talent-lvl">
+<h3>Lvl:'  . $xd['level'] . '</h3>
+<br>
+</div>
+    <h4>' . $xd['name'] . '</h4><hr>
+    <p class="kurac">' . $xd['description'] . '</p>
+    </div>
+        <div class="lvl-container">
+            <a id="' . str_replace(' ', '', $xd['name']) . '" href="../php/talent.php?name=' . $xd['name'] . '&la=1&lvl=' . $xd['level'] . '" class="hehe plus" style="float: left;">+</a>
+            <a  id="' . str_replace(' ', '', $xd['name']) . '" href="../php/talent.php?name=' . $xd['name'] . '&la=2&lvl=' . $xd['level'] . '" class="hehe minus" style="float: right;">-</a>
+        </div>
+    
+    </span>';
