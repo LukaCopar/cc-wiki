@@ -1,4 +1,5 @@
 window.onload = () => {
+	
 
 	$("#title").html("Heros");
 
@@ -60,6 +61,10 @@ $(document).on("click", ".hero-open", function (e) {
 	});
 });
 
+$(document).on("scroll", ".talent", function(e) {
+	console.log(123);
+});
+
 $(document).on("click", ".hehe", function (e) {
 	e.preventDefault();
 	//console.log($(this)[0].id);
@@ -72,5 +77,17 @@ $(document).on("click", ".hehe", function (e) {
 		talent += $(this)[0].id;
 		//console.log(talent);
 		$(talent).html(txt);
+	});
+});
+
+$(document).on("click", ".hehe2", function (e) {
+	e.preventDefault();
+	//console.log($(this)[0].id);
+	$.ajax({
+		url: $(this)[0].href
+	}).done((content) => {
+		//console.log(content);
+		txt = content;
+		$(".skill_stats").html(txt);
 	});
 });

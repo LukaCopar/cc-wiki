@@ -18,7 +18,7 @@ while ($xd = $lmao->fetch()) {
 	<form class="hero-open" target="_blank" action="./php/hero.php?hero=' . $xd['id'] . '"> 
 	<div class="hero">
 			<img class="hero-card-img" src="' . $xd['img_url'] . '" alt="jah pac ni slike">
-			<div><img class="hero-skill-img" src="' . $skill_img . '"/><h4  class="hero-name"> ' . $xd['name'] . ' </h4></div>
+			<div class="hero-name-skil"><img class="hero-skill-img" src="' . $skill_img . '"/><h4  class="hero-name"> ' . $xd['name'] . ' </h4></div>
 		</div>
 		</form>
 		';
