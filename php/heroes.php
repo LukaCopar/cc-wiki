@@ -4,12 +4,12 @@ $lmao = $pdo->query("SELECT * FROM heros");
 
 
 while ($xd = $lmao->fetch()) {
-	$skill1 = $pdo->query('SELECT * FROM hero_skills WHERE (name = (SELECT skill_name FROM heros WHERE id = ' . $xd['id'] . '))');
+	$skill1 = $pdo->query('SELECT * FROM hero_skills WHERE hero_id = '.$xd['id'].'');
 	$skill = $skill1->fetch();
 	$skill_img = $skill['img_url'] ?? 'no image';
 
-	if (isset($skill['img_url']))
-		$skill_img = "../img/maelstrom.png";
+	// if (isset($skill['img_url']))
+	// 	$skill_img = "../img/maelstrom.png";
 
 	if (isset($xd['img_url'])) {
 		$xd['img_url'] = "../img/zephyrica1.png";
