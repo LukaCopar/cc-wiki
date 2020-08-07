@@ -100,7 +100,7 @@ $hero = $lmao->fetch();
 			<div class="skill_stats">
 				<div class="skill_desc">
 					<?php
-					$query = 'SELECT * FROM hero_skills WHERE (id = (SELECT skill_id FROM heros WHERE id = ' . $xd['id'] . '))';
+					$query = 'SELECT * FROM hero_skills WHERE (hero_id ='. $xd['id'] . ')';
 					$lmao = $pdo->query($query);
 					$hero_skill = $lmao->fetch();
 					//print_r($hero_skill);

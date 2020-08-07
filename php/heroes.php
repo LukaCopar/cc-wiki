@@ -2,9 +2,9 @@
 require 'connection.php';
 $lmao = $pdo->query("SELECT * FROM heros");
 
-
+$lvl = 1;
 while ($xd = $lmao->fetch()) {
-	$skill1 = $pdo->query('SELECT * FROM hero_skills WHERE hero_id = '.$xd['id'].'');
+	$skill1 = $pdo->query('SELECT * FROM hero_skills WHERE hero_id = '.$xd['id'].' AND level = '.$lvl.'');
 	$skill = $skill1->fetch();
 	$skill_img = $skill['img_url'] ?? 'no image';
 
