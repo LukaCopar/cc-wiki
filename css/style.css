@@ -39,16 +39,8 @@
 		display: block !important;
 		height: 2px !important;
 		margin: 0 auto !important;
-
-@keyframes con {
-	0% {height: 9vh; bottom: 0px}
-	100% {height: 100vh; bottom: 0px}
-}
-
-
-.animate {
-	/*animation: con 2s forwards cubic-bezier(.59,.65,.57,1.02);*/
 	}
+
 	h4{
 		font-size: medium !important;
 
@@ -85,8 +77,22 @@
 		margin-bottom: 10px !important;
 	
 }
+}
+
+#content{
+	overflow: auto;
 
 }
+
+@keyframes con {
+	0% {height: 9vh; bottom: 0px}
+	100% {height: 100vh; bottom: 0px}
+}
+
+
+.animate {
+	/*animation: con 2s forwards cubic-bezier(.59,.65,.57,1.02);*/
+	}
 
 .animate-back {
 	/*animation: con 2s forwards cubic-bezier(.59,.65,.57,1.02) reverse;*/
@@ -217,7 +223,7 @@ select {
 	width: 100%;
 	bottom: 0px;
 	margin: 0;
-	overflow: hidden;
+	overflow: auto;
 	background-color: #1c1f26;
 	height: 4em;
 }
