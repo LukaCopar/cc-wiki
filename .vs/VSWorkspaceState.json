@@ -2,9 +2,10 @@
   "ExpandedNodes": [
     "",
     "\\css",
+    "\\img",
     "\\js",
     "\\php"
   ],
-  "SelectedNode": "\\insert.php",
+  "SelectedNode": "\\js\\index.js",
   "PreviewInSolutionExplorer": false
 }
