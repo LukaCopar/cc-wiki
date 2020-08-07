@@ -87,6 +87,10 @@ $(document).on("click", ".hero-open", function (e) {
 	});
 });
 
+$(document).on("scroll", ".talent", function (e) {
+	console.log(123);
+});
+
 $(document).on("click", ".hehe", function (e) {
 	e.preventDefault();
 	//console.log($(this)[0].id);

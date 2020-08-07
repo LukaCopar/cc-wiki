@@ -104,9 +104,14 @@ $hero = $lmao->fetch();
 					$lmao = $pdo->query($query);
 					$hero_skill = $lmao->fetch();
 					//print_r($hero_skill);
-					echo ($hero_skill['description'])
-					?>
-
+				echo '	<div class="level"><a id="' .$hero_skill['hero_id'] . '" href="../php/hero_skill.php?name=' . $hero_skill['name'] . '&la=1&lvl=' . $hero_skill['level'] . '" class="hehe2" style="float: left;">+</a>';
+				echo '	<h3 class="mrs">Skill Lvl: '.$hero_skill['level'].'</h3>';
+			    echo '	<a  id="' . $hero_skill['hero_id'] . '" href="../php/hero_skill.php?name=' . $hero_skill['name'] . '&la=2&lvl=' . $hero_skill['level'] . '" class="hehe2" style="float: right;">-</a></div>';
+					echo ($hero_skill['description']);
+					echo '
+					<div class="plus">
+					</div>
+					';?>
 
 				</div>
 
