@@ -28,6 +28,13 @@
 			</div>
 		</div>
 		<!-- Extra -->
+
+	</div>
+	<div id="navbar">
+		<?php
+		require 'inc/nav.html';
+
+		?>
 		<div id="content">
 			<div class="container-heros">
 				<?php
@@ -36,11 +43,6 @@
 			</div>
 		</div>
 	</div>
-
-	<?php
-	require 'inc/nav.html';
-
-	?>
 </body>
 
 </html>

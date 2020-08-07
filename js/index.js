@@ -1,13 +1,12 @@
-window.onload = () => {
+$(document).ready(() => {
 
 	$("#title").html("Heros");
 
-	$("#talents").click(() => {
+	$("#talents").click(function (e) {
 		var txt = '<div class="container-talents">';
 		$.ajax({
 			url: "/php/talents.php"
 		}).done((content) => {
-			//console.log(content);
 			txt += content;
 			txt += "</div>";
 			$("#content").html(txt);
@@ -15,7 +14,7 @@ window.onload = () => {
 		});
 	});
 
-	$("#heroes").click(() => {
+	$("#heroes").click(function () {
 		var txt = '<div class="container-heros">';
 		$.ajax({
 			url: "/php/heroes.php"
@@ -28,6 +27,33 @@ window.onload = () => {
 		});
 	});
 
+	$(".nav-item").click(function (e) {
+		//console.log(e.target.parentNode);
+		//console.log();
+		if ($("#navbar").hasClass("animate") && $(e.target.parentNode).hasClass("active")) {
+			$("#navbar").removeClass("animate");
+			var lis = $("#navbar").find('li');
+			$(lis).each(function (e) {
+				$($(lis)[e]).removeClass("active");
+			});
+			$("#navbar").animate({
+				height: window.innerHeight * 0.09
+			});
+		}
+		else if (!$("navbar").hasClass("animate")) {
+			var lis = $("#navbar").find('li');
+			$(lis).each(function (e) {
+				$($(lis)[e]).removeClass("active");
+			});
+			$("#navbar").addClass('animate');
+			//$("#navbar").addClass('animate');
+			$("#navbar").animate({
+				height: window.innerHeight
+			});
+			$(e.target.parentNode).addClass("active");
+		}
+
+	});
 
 	$(".hero-open").click(function (e) {
 		e.preventDefault();
@@ -43,7 +69,8 @@ window.onload = () => {
 			$("#content").html(txt);
 		});
 	});
-}
+
+});
 
 $(document).on("click", ".hero-open", function (e) {
 	e.preventDefault();
@@ -70,7 +97,7 @@ $(document).on("click", ".hehe", function (e) {
 		txt = content;
 		talent = "#";
 		talent += $(this)[0].id;
-		//console.log(talent);
 		$(talent).html(txt);
 	});
 });
+
