@@ -36,8 +36,13 @@ $(document).ready(() => {
 			$(lis).each(function (e) {
 				$($(lis)[e]).removeClass("active");
 			});
+			$("#meni").css("position", "relative");
+			$("#navbar").scrollTop();
 			$("#navbar").animate({
 				height: window.innerHeight * 0.09
+			}, function () {
+				$("#meni").css("bottom", "0");
+				$("#navbar").css("overflow", "hidden");
 			});
 		}
 		else if (!$("navbar").hasClass("animate")) {
@@ -49,6 +54,13 @@ $(document).ready(() => {
 			//$("#navbar").addClass('animate');
 			$("#navbar").animate({
 				height: window.innerHeight
+			}, function () {
+				$("#meni").css("position", "fixed");
+				$("#meni").css("top", "0");
+				$("#meni").css("width", "100%");
+				$("#meni").css("z-index", "100");
+				$("#meni").css("height", "9vh");
+				$("#navbar").css("overflow", "auto");
 			});
 			$(e.target.parentNode).addClass("active");
 		}

@@ -78,10 +78,14 @@
 	
 }
 }
+#meni{
+background-color: #27292d;
 
+
+}
 #content{
 	overflow: auto;
-
+	margin-top: 9vh;
 }
 
 @keyframes con {
@@ -223,7 +227,7 @@ select {
 	width: 100%;
 	bottom: 0px;
 	margin: 0;
-	overflow: auto;
+	overflow: hidden;
 	background-color: #1c1f26;
 	height: 4em;
 }
