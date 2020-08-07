@@ -252,6 +252,10 @@ select {
 	vertical-align: middle;
 	font-weight: 700;
 }
+.item:focus{
+	background-color: #27292D !important;
+
+}
 
 	.item:hover {
 		animation-name: navbar1;
