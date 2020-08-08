@@ -119,7 +119,6 @@ html {
 		color: whitesmoke !important;
 	}
 	.hero-name-skil{
-		text-align: left !important;
 		height: 40px !important;
 		overflow: hidden;
 		font-size: 30pt !important;
@@ -405,6 +404,8 @@ select {
 	.hero-name-skil{
 		display: flex;
 		justify-content: flex-start;
+		align-items: flex-start;
+		align-content: flex-start;
 
 	}
 	.hero-name-skil >div{
