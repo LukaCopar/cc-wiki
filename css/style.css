@@ -243,8 +243,8 @@ html {
 	}
 
 #content{
-	overflow: auto;
-	margin-top: 9vh;
+
+	padding-top: 9vh;
 }
 
 @keyframes con {
@@ -287,12 +287,10 @@ html {
 
 a {
 	text-decoration: none;
-	color:#474747 !important; 
+	color:#474747 ; 
 }
 html{
 	height: auto !important;
-
-
 }
 
 .menu {
@@ -437,7 +435,8 @@ select {
 	width: 100%;
 	height: 100% !important;
 	vertical-align: middle;
-	font-weight: 700;
+		transition: color .4s;
+		font-weight: 700;
 }
 .item:focus{
 	background-color: #27292D !important;
@@ -445,6 +444,8 @@ select {
 }
 
 	.item:hover {
+		color: #27292d !important;
+		transition: color .5s;
 		animation-name: navbar1;
 		animation-duration: .5s;
 		animation-fill-mode: forwards;

@@ -42,7 +42,7 @@ $(document).ready(() => {
 					var h = new Hero(hero.id, hero.img_url, hero.name, hero.skill_img);
 					heroes.push(h);
 				});
-				
+				tht = "";
 				txt += content;
 				txt += "</div>";
 				//$("#content").html(txt);
@@ -98,7 +98,7 @@ $(document).ready(() => {
 				height: window.innerHeight * 0.09
 			}, function () {
 				$("#meni").css("bottom", "0");
-				$("#navbar").css("overflow", "hidden");
+				$("#navbar").css("overflow", "auto");
 			});
 		}
 		else if (!$("navbar").hasClass("animate")) {
