@@ -110,7 +110,7 @@ html {
 	}
 	.container-heros {
 		padding-top: 10vw !important;
-		width: 95% !important;
+		width: 90% !important;
 	}
 	.container-heros > form{
 		
@@ -632,6 +632,7 @@ select {
 	margin: 10px auto;
 	margin-left: 10px;
 	padding: 1vw;
+	margin-right: 10px;
 }
 
 .talent-img{
