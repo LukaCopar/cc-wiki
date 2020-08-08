@@ -111,27 +111,22 @@ html {
 	.container-heros {
 		padding-top: 10vw !important;
 		width: 90% !important;
+		column-gap: 0 !important;
 	}
 	.container-heros > form{
 		
-		width: 45% !important;
-		max-height: 400px !important; 
+		width: 30% !important;
 		color: whitesmoke !important;
-		margin: 2px auto !important;
-		margin-bottom: 10px !important;
 	}
 	.hero-name-skil{
-		vertical-align: middle !important;
-		padding: 5% !important;
-		text-align: center !important;
-		height: 60px !important;
+		text-align: left !important;
+		height: 40px !important;
 		overflow: hidden;
 		font-size: 30pt !important;
 		width: 100% !important;
 	}
 	.hero-name{
-		font-size: 15pt !important;
-		width: 49% !important;
+		font-size: 10pt !important;
 
 	}
 	.hero-card-img{
@@ -140,7 +135,7 @@ html {
 
 	}
 	.hero-skill-img{
-		height: 60px !important;
+		height: 30px !important;
 	}
 	.hero{
 		max-width: 100% !important;
@@ -149,8 +144,25 @@ html {
 	}
 	.container-talents{
 		padding-top: 10vw !important;
+		font-size: 12pt !important;
 		width: 90% !important;
 	}
+	.container-talents > div{
+		padding-bottom: 10px !important ;
+		width: 45% !important;
+		color: whitesmoke !important;
+	
+}
+.lvl-container > a{
+	font-size: 14pt !important;
+}
+.lvl-container{
+	height: 30px !important;
+	bottom: 0 !important;
+}
+.mrs1{
+	font-size: 12pt !important;
+}
 	hr{
 		display: block !important;
 		height: 2px !important;
@@ -171,12 +183,11 @@ html {
 		height: 10vw !important;
 		}
 	.hehe{
-		transform: scale(1.6) !important;
 		height: 100% !important;
+		font-size: inherit;
 	}
-	.container-talents {
-		width: 90% !important;
-		font-size: 15pt !important;
+	.hehe:hover{
+		color: #27292D !important;
 	}
 	.kurac{
 		font-size: 10pt !important;
@@ -187,14 +198,7 @@ html {
 		height: 5.5vw !important;
 
 	}
-	.container-talents > div{
-		width: 40% !important;
-		max-height: 40vw !important; 
-		color: whitesmoke !important;
-		margin: 2px auto !important;
-		margin-bottom: 10px !important;
-	
-}
+
 #meni{
 	background-color: #27292d !important;
 	width: 100% !important;
@@ -251,11 +255,11 @@ html {
 
 a:focus{
 	text-decoration: none !important;
-	color: #666 !important;
+	color: #27292d !important;
 
 }
 a:hover{
-	
+	color: #27292D !important;
 	background-color: #474747 !important;
 	transition: background-color .5s;
 
@@ -367,14 +371,14 @@ select {
 	.hero {
 		
 		overflow: hidden;
-		max-height: 500px;
 		background-color: #27292d;
 		border-radius: 10px;
 		transform: scale(1);
 		transition: transform .3s;
 		text-align: center;
 		cursor: pointer;
-		padding-bottom: .6vw;
+		padding-left: 5px;
+		padding-right: 5px;
 	}
 	.hero:hover{
 		transform: scale(1.02);
@@ -391,15 +395,20 @@ select {
 	.hero-name{
 		font-size: 1.6vw;
 		text-align: center;
-		float: right;
-		width: 10vw;
 		height: auto;
 		margin: 0vw auto;
 		margin-top: .5vw;
 		border-radius: 5px;
 		background-color: #27292d;
 	}
+	.hero-name-skil{
+		display: flex;
+		justify-content: flex-start;
 
+	}
+	.hero-name-skil >div{
+		width: 49%;
+	}
 	#move {
 		position: fixed;
 		bottom: 45px;
@@ -472,13 +481,16 @@ select {
 	}
 
 	.container-heros {
-		height: auto;
 		width: 80%;
 		margin: 0 auto;
-		justify-content: space-evenly;
-		flex-wrap: wrap;
-		flex-direction: row;
+		margin-top: 2%;
 		display: flex;
+		justify-content: space-evenly;	
+		flex-wrap: wrap;
+		column-gap: 20px;
+		row-gap: 20px;
+		flex-flow: row wrap;
+		align-items: stretch;
 		padding-bottom: 4em;
 	}
 	.container-heros > form{
@@ -486,12 +498,9 @@ select {
 		max-height: 500px !important;
 		font-family: Arial;
 		font-weight: 600;
-		justify-content: space-evenly;
+		align-content: space-around;
 		color: whitesmoke;
 		text-align: center;
-		margin: 10px auto;
-		margin-left: 10px;
-		margin-right: 10px;
 	}
 
 	
@@ -611,29 +620,27 @@ select {
 
 
 .container-talents {
-	height: auto;
-	width: 80%;
 	margin: 0 auto;
-	justify-content: space-evenly;
-	flex-wrap: wrap;
-	flex-direction: row;
+	margin-top: 2%;
+	width: 80%;
 	display: flex;
+	flex-wrap: wrap;
+	column-gap: 20px;
+	row-gap: 20px;
+	flex-flow: row wrap;
+	align-items: stretch;
+	justify-content: space-evenly;
 	font-size: 15pt !important;
 	padding-bottom: 4em;
+	
 }
 
 .container-talents > div{
 	width: 250px;
-	min-height: 500px !important;
-	max-height: 700px;
+	padding: 5px;
 	font-family: Arial;
-	justify-content: space-evenly;
 	color: whitesmoke !important;
-	overflow: auto;
-	margin: 10px auto;
-	margin-left: 10px;
-	padding: 1vw;
-	margin-right: 10px;
+	overflow: hidden;
 }
 
 .talent-img{
@@ -691,28 +698,22 @@ padding-bottom: 1vw;
 	}
 .lvl-container{
 	position: fixed;
-	display: flexbox;
+	display: flex;
 	bottom: 0;
 	left: 0;
 	right: 0;
+	height: 9%;
 	overflow: hidden;
 }
 .lvl-container > a{
 	width: 50% !important;
 	background-color: gray;
 	text-align: center;
-	height: 2.5vw;
-	font-size: 20pt !important;
+	font-size: 20pt;
 }
-.plus{
-	background-color: green;
-	border-right:2px solid #27292D;
-}
-.minus{
-	background-color: red;
-}
-
 .mrs1{
-	overflow: auto;
 	padding-bottom: 4vw;
+}
+.hero-skill-img{
+	height: 60px;
 }
