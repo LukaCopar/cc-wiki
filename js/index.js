@@ -2,6 +2,9 @@ var heroes;
 var talents;
 
 $(document).ready(() => {
+	$(function() {
+		FastClick.attach(document.body);
+	});
 
 	$.ajax({
 		url: "/php/heroes.php"
@@ -111,7 +114,6 @@ $(document).ready(() => {
 					var h = new Hero(hero.id, hero.img_url, hero.name, hero.skill_img);
 					heroes.push(h);
 				});
-				
 			});
 		}
 		$("#title").html("Heros");
@@ -159,7 +161,6 @@ $(document).ready(() => {
 				$($(lis)[e]).removeClass("active");
 			});
 			$("#meni").css("position", "relative");
-			$("#navbar").scrollTop();
 			$("#navbar").animate({
 				height: window.innerHeight * 0.09
 			}, function () {
@@ -205,6 +206,8 @@ $(document).ready(() => {
 	});
 
 });
+
+
 
 $(document).on("click", ".hero-open", function (e) {
 	e.preventDefault();
@@ -267,6 +270,7 @@ $(document).on("click", ".hehe", function (e) {
 	}
 
 });
+
 $(document).on("click", ".hehe2", function (e) {
 	e.preventDefault();
 	//console.log($(this)[0].id);
@@ -275,9 +279,6 @@ $(document).on("click", ".hehe2", function (e) {
 	}).done((content) => {
 		//console.log(content);
 		txt = content;
-		skill = "#";
-		skill += $(this)[0].id;
-		console.log(skill);
 		$(".skill_stats").html(txt);
 	});
 });

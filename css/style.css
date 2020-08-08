@@ -5,13 +5,113 @@
 	100% {color: white;}
 }
 
+html {
+    -ms-touch-action: manipulation;
+        touch-action: manipulation;
+}
 
 @media only screen and (max-width: 900px) {
+	#content{
+		overflow: initial !important;
+	}
+
+	#hero{
+		padding-top: 10vw !important;
+		max-width: 100% !important;
+		display: flex !important;
+		justify-content: space-evenly !important;
+		height: auto !important;
+		flex-wrap: wrap !important;
+		flex-direction: column !important;
+		overflow: hidden !important;
+		padding-bottom: 10vw !important;
+	}
+	#hero > div{
+		width: 100% !important;
+		margin: 10px auto;
+	}
+	.skill1{
+		max-height: 400px !important;
+		overflow:  hidden !important;
+		flex-wrap: wrap !important;
+		flex-direction: column !important;
+	}
+	.skill1 > div{
+		width: 100% !important;
+		text-align: center !important;
+	}
+	.skill_desc{
+		margin: 0 auto !important;
+		text-align: center !important;
+		font-size: 9pt !important;
+		width: 100% !important;
+	}
+	.hero_skill_img {
+		height: auto !important;
+	}
+	.stat{
+		font-size: 16pt !important;
+
+	}
+	.level > a{
+		width: 50px !important;
+		height: 50px !important;
+
+	}
+	.level{
+		margin: 0 auto !important;
+		font-size: 8pt !important;
+		width: auto !important;
+		height: auto !important;
+	}.mrs{
+		margin: 0 auto !important;
+		width: auto !important;
+		font-size: 22pt !important;
+	}
+.hero1{
+	display: flex !important;
+	justify-content: space-evenly !important;
+	height: 100% !important;
+	flex-wrap: wrap !important;
+	flex-direction: row !important;
+	overflow: auto;
+
+}
+.hero_img{
+	height: auto !important;
+	width: auto !important;
+}
+.hero_img > h3{
+	font-size: 20pt !important;
+
+}
+.hero1 > div{
+	margin: 10px auto;
+	width: 100% !important;
+	height: auto !important;
+	overflow:  hidden !important;
+}
+.hero_stats {
+	overflow: hidden !important;
+	padding: 0 !important;
+	width: 100% !important;
+	height: 100% !important;
+	max-width: 100% !important;
+}
+
+	.hero_stats > div {
+		margin-bottom: 10px auto;
+		height: 35px !important;
+		max-width: 100% !important;
+	}
 	.container{
+		padding-top: 10vw !important;
 		width: 90% !important;
+		height: 100% !important;
 
 	}
 	.container-heros {
+		padding-top: 10vw !important;
 		width: 95% !important;
 	}
 	.container-heros > form{
@@ -36,7 +136,7 @@
 
 	}
 	.hero-card-img{
-		height: 200px !important;
+		height: auto !important;
 		width: auto !important;
 
 	}
@@ -50,6 +150,7 @@
 
 	}
 	.container-talents{
+		padding-top: 10vw !important;
 		width: 90% !important;
 	}
 	hr{
@@ -64,7 +165,7 @@
 	}
 	.item{
 	text-align: center !important;
-	font-size: 14pt;
+	font-size: 12pt;
 	padding: 0 !important;
 	}
 	.talent-img{
@@ -99,7 +200,8 @@
 #meni{
 	background-color: #27292d !important;
 	width: 100% !important;
-		display: flex;
+	display: flex;
+	height: 60px !important;
 	justify-content: space-evenly;
 
 	}
@@ -132,7 +234,7 @@
 #meni{
 	background-color: #27292d !important;
 	width: 100%;
-	height: 60px !important;
+	height: 70px ;
 		display: flex;
 	}#meni > li{
 		font-size: 20pt !important;
@@ -141,8 +243,8 @@
 	}
 
 #content{
-	overflow: auto;
-	margin-top: 9vh;
+
+	padding-top: 9vh;
 }
 
 @keyframes con {
@@ -150,10 +252,14 @@
 	100% {height: 100vh; bottom: 0px}
 }
 
+a:focus{
+	text-decoration: none !important;
+	color: #474747 !important;
 
+}
 /* width */
 ::-webkit-scrollbar {
-	width: 15px;
+	width: .5px;
   }
   
   /* Track */
@@ -185,12 +291,10 @@
 
 a {
 	text-decoration: none;
-	color:#474747 !important; 
+	color:#474747 ; 
 }
 html{
 	height: auto !important;
-
-
 }
 
 .menu {
@@ -335,7 +439,8 @@ select {
 	width: 100%;
 	height: 100% !important;
 	vertical-align: middle;
-	font-weight: 700;
+		transition: color .4s;
+		font-weight: 700;
 }
 .item:focus{
 	background-color: #27292D !important;
@@ -343,6 +448,8 @@ select {
 }
 
 	.item:hover {
+		color: #27292d !important;
+		transition: color .5s;
 		animation-name: navbar1;
 		animation-duration: .5s;
 		animation-fill-mode: forwards;
@@ -369,7 +476,7 @@ select {
 	.container {
 		width: 80%;
 		margin: 0 auto;
-		height: 100%;
+		height: auto;
 		justify-content: space-evenly;
 	}
 
@@ -486,6 +593,7 @@ select {
 }
 
 #hero {
+	padding-top: 9vw;
 	margin: 10px;
 	overflow: hidden;
 
@@ -568,7 +676,7 @@ padding-bottom: 1vw;
 
 .level{
 	display: flex;
-	width: 15vw !important;
+	width: 15vw;
 	overflow: hidden;
 	height: 5vw;
 	vertical-align: middle;
