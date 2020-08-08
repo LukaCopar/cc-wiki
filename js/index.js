@@ -45,7 +45,7 @@ $(document).ready(() => {
 		}
 		$("#content").html("");
 		var parent = $("<div>");
-		parent.addClass("container-heroes");
+		parent.addClass("container-heros");
 		$("#content").append(parent);
 		heroes.forEach(function(hero) {
 			var form = $("<form>");

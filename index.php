@@ -41,7 +41,7 @@
 		<div id="content">
 			<div class="container-heros">
 				<?php
-				require 'php/heroes.php'
+				//require 'php/heroes.php'
 				?>
 			</div>
 		</div>

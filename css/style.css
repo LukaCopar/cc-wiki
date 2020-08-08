@@ -36,7 +36,7 @@
 
 	}
 	.hero-card-img{
-		height: 300px !important;
+		height: 200px !important;
 		width: auto !important;
 
 	}
@@ -64,7 +64,8 @@
 	}
 	.item{
 	text-align: center !important;
-	font-size: 15pt;
+	font-size: 14pt;
+	padding: 0 !important;
 	}
 	.talent-img{
 		padding-bottom: 1vw;
@@ -103,12 +104,20 @@
 
 	}
 	#meni > li{
-	justify-content: space-evenly;
-		
+	justify-content: space-evenly !important;
+		text-align: center !important;
+		padding: 2px !important;
 		font-size: 13pt !important;
 	
 	
 	}
+
+
+	::-webkit-scrollbar {
+		width: 5px !important;
+		transition: width 1s !important;
+	  }
+
 
 }
 
@@ -342,6 +351,7 @@ select {
 		text-decoration: none;
 		color: #474747;
 		background-color: #27292D !important;
+		height: none !important;
 	}
 	.active{
 		background-color: #27292D !important;
