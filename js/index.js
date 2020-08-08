@@ -1,4 +1,13 @@
 $(document).ready(() => {
+	var heroes;
+	$.ajax({
+		url: "/php/heroes.php"
+	}).done(function(c) {
+		heroes = JSON.parse(c);
+		var b = new Build(heroes[0], heroes[1], heroes[2], heroes[3], heroes[4]);
+		b.out();
+	});
+
 
 	$("#title").html("Heros");
 
@@ -7,6 +16,7 @@ $(document).ready(() => {
 		$.ajax({
 			url: "/php/talents.php"
 		}).done((content) => {
+			console.log(heroes);
 			txt += content;
 			txt += "</div>";
 			$("#content").html(txt);
@@ -16,14 +26,58 @@ $(document).ready(() => {
 
 	$("#heroes").click(function () {
 		var txt = '<div class="container-heros">';
-		$.ajax({
-			url: "/php/heroes.php"
-		}).done((content) => {
-			//console.log(content);
-			txt += content;
-			txt += "</div>";
-			$("#content").html(txt);
-			$("#title").html("Heros");
+		
+			
+		if(typeof heroes !== 'undefined') {
+			$.ajax({
+				url: "/php/heroes.php"
+			}).done((content) => {
+				
+				var lmao = JSON.parse(content);
+				//console.log(lmao);
+				lmao.forEach(function(hero) {
+					var h = new Hero(hero.id, hero.img_url, hero.name, hero.skill_img);
+					heroes.push(h);
+				});
+				
+				txt += content;
+				txt += "</div>";
+				//$("#content").html(txt);
+				$("#title").html("Heros");
+			});
+		}
+		$("#content").html("");
+		var parent = $("<div>");
+		parent.addClass("container-heroes");
+		$("#content").append(parent);
+		heroes.forEach(function(hero) {
+			var form = $("<form>");
+			form.addClass("hero-open");
+			form.attr("target", "_blank");
+			form.attr("action", "./php/hero.php?hero=" + hero.id);
+			var div = $("<div>");
+			div.addClass("hero");
+			var img = $("<img>");
+			img.addClass("hero-card-img");
+			img.attr("src", hero.img_url);
+			img.attr("alt", "jah nema");
+			var div2 = $("<div>");
+			div2.addClass("hero-name-skill");
+			var img2 = $("<img>");
+			img2.addClass("hero-skill-img");
+			img2.attr("src", hero.skill_img);
+			var h4 = $("<h4>");
+			h4.addClass("hero-name");
+			h4.html(hero.name);
+
+			div2.append(img2);
+			div2.append(h4);
+			div.append(img);
+			div.append(div2);
+			form.append(div);
+
+			
+			parent.append(form);
 		});
 	});
 
