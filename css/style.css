@@ -351,6 +351,7 @@ select {
 		text-decoration: none;
 		color: #474747;
 		background-color: #27292D !important;
+		height: none !important;
 	}
 	.active{
 		background-color: #27292D !important;
