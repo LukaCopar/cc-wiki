@@ -255,14 +255,14 @@ html {
 
 a:focus{
 	text-decoration: none !important;
-	color: #27292d !important;
-	background-color: initial !important;
+	color: black !important;
+	background-color: gray !important;
 
 }
 a:hover{
-	color: #27292D !important;
-	background-color: #474747 !important;
-	transition: background-color .5s;
+	color: #777 !important;
+	background-color: inherit !important;
+	transition: background-color .2s;
 
 }
 /* width */
