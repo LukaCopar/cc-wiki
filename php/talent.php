@@ -29,7 +29,6 @@ $lmao1 = $pdo->query('SELECT * FROM talents WHERE (name="' . $name . '" AND leve
 $xd = $lmao1->fetch();
 
 echo '
-<span class="talent" id="' . str_replace(' ', '', $xd['name']) . '">
 <div class="mrs1" value="./php/hero.php?talent=' . $xd['id'] . '">
 <img class="talent-img" src="' . $xd['img_url'] . '" alt="no image"/>
 <div class="talent-lvl">
@@ -42,6 +41,4 @@ echo '
         <div class="lvl-container">
             <a id="' . str_replace(' ', '', $xd['name']) . '" href="../php/talent.php?name=' . $xd['name'] . '&la=1&lvl=' . $xd['level'] . '" class="hehe plus" style="float: left;">+</a>
             <a  id="' . str_replace(' ', '', $xd['name']) . '" href="../php/talent.php?name=' . $xd['name'] . '&la=2&lvl=' . $xd['level'] . '" class="hehe minus" style="float: right;">-</a>
-        </div>
-    
-    </span>';
+        </div>';

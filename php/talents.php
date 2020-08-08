@@ -26,7 +26,7 @@ while ($xd = $lmao->fetch()) {
 
 
 	echo '
-	<span class="talent" id="' . str_replace(' ', '', $xd['name']) . '">
+	<div class="talent" id="' . str_replace(' ', '', $xd['name']) . '">
 	<div class="mrs1" value="./php/hero.php?talent=' . $xd['id'] . '">
 	<img class="talent-img" src="' . $xd['img_url'] . '" alt="no image"/>
 	<div class="talent-lvl">
@@ -41,7 +41,7 @@ while ($xd = $lmao->fetch()) {
 				<a  id="' . str_replace(' ', '', $xd['name']) . '" href="../php/talent.php?name=' . $xd['name'] . '&la=2&lvl=' . $xd['level'] . '" class="hehe minus" style="float: right;">-</a>
 			</div>
 		
-		</span>
+		</div>
 		';
 }
 
