@@ -1,48 +1,120 @@
+var heroes;
+var talents;
+
 $(document).ready(() => {
-	var heroes;
+
 	$.ajax({
 		url: "/php/heroes.php"
 	}).done(function(c) {
 		heroes = JSON.parse(c);
-		var b = new Build(heroes[0], heroes[1], heroes[2], heroes[3], heroes[4]);
-		b.out();
+	});
+
+	$.ajax({
+		url: "/php/talents.php"
+	}).done(function(c) {
+		talents = JSON.parse(c);
 	});
 
 
 	$("#title").html("Heros");
 
 	$("#talents").click(function (e) {
-		var txt = '<div class="container-talents">';
-		$.ajax({
-			url: "/php/talents.php"
-		}).done((content) => {
-			console.log(heroes);
-			txt += content;
-			txt += "</div>";
-			$("#content").html(txt);
-			$("#title").html("Talents");
+		if(typeof talents === 'undefined' || talents.length == 0) {
+			$.ajax({
+				url: "/php/talents.php"
+			}).done((content) => {
+				var lmao2 = JSON.parse(content);
+				lmao2.forEach(function(e) {
+					var t = new Talent(e.id, e.img_url, e.name, e.level);
+					talents.push(t);
+				});
+				
+			});
+		}
+		$("#title").html("Talents");
+		$("#content").html("");
+		var parent = $("<div>");
+		parent.addClass("container-talents");
+		$("#content").append(parent);
+		talents.forEach(function(e, val) {
+			if(e.level == 1) {
+				var h3 = $("<h3>");
+			var br = $("<br>");
+			var div = $("<div>");
+			div.addClass("talent-lvl");
+			h3.html("Lvl: " + e.level);
+			
+			var img = $("<img>");
+			var h4 = $("<h4>");
+			var hr = $("<hr>");
+			var p = $("<p>");
+			var divM = $("<div>");
+			h4.html(e.name);
+			p.html(e.description);
+			img.addClass("talent-img");
+			img.attr("src", e.img_url);
+			img.attr("alt", "jah");
+			divM.addClass("mrs1");
+			
+			div.append(h3);
+			div.append(br);
+
+			divM.append(img);
+			divM.append(div);
+			divM.append(h4);
+			divM.append(hr);
+			divM.append(p);
+
+
+			var a1 = $("<a>");
+			var a2 = $("<a>");
+			var divN = $("<div>");
+			divN.addClass("lvl-container");
+			a1.attr("id", e.name.replace(/ /g, ""));
+			a2.attr("id", e.name.replace(/ /g, ""));
+			a1.attr("href", "../php/talent.php?name="+e.name+"&la=1&lvl="+e.level);
+			a2.attr("href", "../php/talent.php?name="+e.name+"&la=2&lvl="+e.level);
+
+			a1.addClass("hehe plus");
+			a1.attr("style", "float:left");
+			a1.attr("data", e.level);
+			a1.html("+");
+			a2.addClass("hehe minus");
+			a2.attr("style", "float:left");
+			a2.attr("data", e.level);
+			a2.html("-");
+
+			divN.append(a1);
+			divN.append(a2);
+
+
+
+			var divP = $("<div>");
+			divP.append(divM);
+			divP.append(divN);
+			divP.addClass("talent");
+			divP.attr("id", e.name.replace(/ /g, ""));
+
+			parent.append(divP);
+			}
 		});
 	});
 
 	$("#heroes").click(function () {
-		if(typeof heroes !== 'undefined') {
+		if(typeof heroes === 'undefined' || heroes.length == 0) {
 			$.ajax({
 				url: "/php/heroes.php"
 			}).done((content) => {
-				
+				console.log("Getting heroes");
 				var lmao = JSON.parse(content);
-				//console.log(lmao);
 				lmao.forEach(function(hero) {
 					var h = new Hero(hero.id, hero.img_url, hero.name, hero.skill_img);
 					heroes.push(h);
 				});
 				
-				txt += content;
-				txt += "</div>";
-				//$("#content").html(txt);
-				$("#title").html("Heros");
 			});
 		}
+		$("#title").html("Heros");
 		$("#content").html("");
 		var parent = $("<div>");
 		parent.addClass("container-heros");
@@ -79,8 +151,7 @@ $(document).ready(() => {
 	});
 
 	$(".nav-item").click(function (e) {
-		//console.log(e.target.parentNode);
-		//console.log();
+		$("#navbar").scrollTop(0);
 		if ($("#navbar").hasClass("animate") && $(e.target.parentNode).hasClass("active")) {
 			$("#navbar").removeClass("animate");
 			var lis = $("#navbar").find('li');
@@ -153,16 +224,48 @@ $(document).on("click", ".hero-open", function (e) {
 
 $(document).on("click", ".hehe", function (e) {
 	e.preventDefault();
-	//console.log($(this)[0].id);
-	$.ajax({
-		url: $(this)[0].href
-	}).done((content) => {
-		//console.log(content);
-		txt = content;
-		talent = "#";
-		talent += $(this)[0].id;
-		$(talent).html(txt);
-	});
+	if(typeof talents === 'undefined' || talents.length == 0) {
+		$.ajax({
+			url: $(this)[0].href
+		}).done((content) => {
+			//console.log(content);
+			txt = content;
+			talent = "#";
+			talent += $(this)[0].id;
+			$(talent).html(txt);
+		});
+	}
+	else {
+		var tal = new Talent(); 
+		$.each(talents, function(ey, val) {
+			//console.log(val.name.replace(/ /g, ""));
+			if(val.name.replace(/ /g, "") == e.target.id) {
+				if($($(e)[0].target).hasClass("plus")) {
+					var lvl = ((parseInt($(e.target).attr("data"), 10) + 1) > 10) ? 10 : (parseInt($(e.target).attr("data"), 10) + 1);
+					if(val.level == lvl) {
+						tal.id = val.id;
+						tal.name = val.name;
+						tal.level = val.level;
+						tal.img_url = val.img_url;
+						tal.description = val.description;
+					}
+				}
+				if($($(e)[0].target).hasClass("minus")) {
+					var lvl = ((parseInt($(e.target).attr("data"), 10) - 1) < 1) ? 1 : (parseInt($(e.target).attr("data"), 10) - 1);
+					console.log(lvl);
+					if(val.level == lvl) {
+						tal.id = val.id;
+						tal.name = val.name;
+						tal.level = val.level;
+						tal.img_url = val.img_url;
+						tal.description = val.description;
+					}
+				}
+			}
+		});
+		tal.replaceTalent($(e.target.parentNode).prev()[0]);
+	}
+
 });
 $(document).on("click", ".hehe2", function (e) {
 	e.preventDefault();

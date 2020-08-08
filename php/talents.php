@@ -21,10 +21,11 @@ if ($level >= 10) {
 // echo $id;
 //echo $la;
 
-$lmao = $pdo->query('SELECT * FROM talents WHERE (level = 1)');
+$lmao = $pdo->query('SELECT * FROM talents');
+$talents = [];
 while ($xd = $lmao->fetch()) {
 
-
+/*
 	echo '
 	<div class="talent" id="' . str_replace(' ', '', $xd['name']) . '">
 	<div class="mrs1" value="./php/hero.php?talent=' . $xd['id'] . '">
@@ -42,8 +43,12 @@ while ($xd = $lmao->fetch()) {
 			</div>
 		
 		</div>
-		';
+		';*/
+
+	array_push($talents, $xd);
 }
+$JSON = json_encode($talents);
+echo $JSON;
 
 
 
