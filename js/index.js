@@ -25,9 +25,6 @@ $(document).ready(() => {
 	});
 
 	$("#heroes").click(function () {
-		var txt = '<div class="container-heros">';
-		
-			
 		if(typeof heroes !== 'undefined') {
 			$.ajax({
 				url: "/php/heroes.php"
