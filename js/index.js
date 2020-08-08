@@ -25,9 +25,6 @@ $(document).ready(() => {
 	});
 
 	$("#heroes").click(function () {
-		var txt = '<div class="container-heros">';
-		
-			
 		if(typeof heroes !== 'undefined') {
 			$.ajax({
 				url: "/php/heroes.php"
@@ -62,7 +59,7 @@ $(document).ready(() => {
 			img.attr("src", hero.img_url);
 			img.attr("alt", "jah nema");
 			var div2 = $("<div>");
-			div2.addClass("hero-name-skill");
+			div2.addClass("hero-name-skil");
 			var img2 = $("<img>");
 			img2.addClass("hero-skill-img");
 			img2.attr("src", hero.skill_img);
