@@ -75,7 +75,7 @@ $hero = $lmao->fetch();
 		<div class="hero1">
 
 			<div class="hero_img">
-				<img style="max-height: 100%;" src="<?php echo ($url1);  ?>" alt="nema slike" />
+				<img src="<?php echo ($url1);  ?>" alt="nema slike" />
 				<hr>
 				<h3><?php echo ($name)  ?></h3>
 			</div>

@@ -5,6 +5,10 @@
 	100% {color: white;}
 }
 
+html {
+    -ms-touch-action: manipulation;
+        touch-action: manipulation;
+}
 
 @media only screen and (max-width: 900px) {
 	#content{
@@ -75,6 +79,7 @@
 }
 .hero_img{
 	height: auto !important;
+	width: auto !important;
 }
 .hero_img > h3{
 	font-size: 20pt !important;
@@ -84,6 +89,7 @@
 	margin: 10px auto;
 	width: 100% !important;
 	height: auto !important;
+	overflow:  hidden !important;
 }
 .hero_stats {
 	overflow: hidden !important;
