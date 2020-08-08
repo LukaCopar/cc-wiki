@@ -218,7 +218,7 @@ html {
 
 
 	::-webkit-scrollbar {
-		width: 5px !important;
+		width: .5px !important;
 		transition: width 1s !important;
 	  }
 
@@ -256,6 +256,7 @@ html {
 a:focus{
 	text-decoration: none !important;
 	color: #27292d !important;
+	background-color: initial !important;
 
 }
 a:hover{
@@ -593,7 +594,6 @@ select {
 }
 
 #hero {
-	padding-top: 9vw;
 	margin: 10px;
 	overflow: hidden;
 
