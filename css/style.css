@@ -12,24 +12,41 @@
 
 	}
 	.container-heros {
-		width: 90% !important;
+		width: 95% !important;
 	}
 	.container-heros > form{
-		width: 20vw !important;
-		height: 35vw !important;
+		
+		width: 45% !important;
+		max-height: 400px !important; 
+		color: whitesmoke !important;
+		margin: 2px auto !important;
+		margin-bottom: 10px !important;
 	}
 	.hero-name-skil{
 		vertical-align: middle !important;
 		padding-right: 3vw !important;
 		text-align: center !important;
+		height: 50px !important;
+		font-size: 30pt !important;
 		width: 100% !important;
 	}
 	.hero-name{
-		font-size: 2vw !important;
+		font-size: 15pt !important;
+		width: 49% !important;
 
 	}
+	.hero-card-img{
+		height: 300px !important;
+		width: auto !important;
+
+	}
+	.hero-skill-img{
+		width: 50px !important;
+		height: 100% !important;
+	}
 	.hero{
-		height: 35vw !important;
+		max-width: 100% !important;
+		height: auto !important; 
 
 	}
 	.container-talents{
@@ -46,8 +63,8 @@
 
 	}
 	.item{
-		font-size: 4vw !important;
 	text-align: center !important;
+	font-size: 15pt;
 	}
 	.talent-img{
 		padding-bottom: 1vw;
@@ -63,26 +80,57 @@
 	}
 	.kurac{
 		font-size: 10pt !important;
+		overflow: auto;
 
 	}
 	.talent-lvl{
 		height: 5.5vw !important;
 
 	}
-	.container-talents > span{
-		width: 25vw !important;
+	.container-talents > div{
+		width: 40% !important;
 		max-height: 40vw !important; 
 		color: whitesmoke !important;
 		margin: 2px auto !important;
 		margin-bottom: 10px !important;
 	
 }
-}
 #meni{
-background-color: #27292d;
+	background-color: #27292d !important;
+	width: 100% !important;
+		display: flex;
+	justify-content: space-evenly;
 
+	}
+	#meni > li{
+	justify-content: space-evenly;
+		
+		font-size: 13pt !important;
+	
+	
+	}
 
 }
+
+.menu .active>a {
+    background: #474747 !important;
+	color: #1c1f26 !important;
+	border-radius: 5px !important;
+	height: 100% !important;
+}
+
+
+#meni{
+	background-color: #27292d !important;
+	width: 100%;
+	height: 60px !important;
+		display: flex;
+	}#meni > li{
+		font-size: 20pt !important;
+	
+	
+	}
+
 #content{
 	overflow: auto;
 	margin-top: 9vh;
@@ -92,6 +140,30 @@ background-color: #27292d;
 	0% {height: 9vh; bottom: 0px}
 	100% {height: 100vh; bottom: 0px}
 }
+
+
+/* width */
+::-webkit-scrollbar {
+	width: 15px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+	background: #474747;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+	background: #666;
+	border-radius: 10px;
+  }
+  
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+	background: #999;
+	border-radius: 5px;
+  }
+
 
 
 .animate {
@@ -115,6 +187,7 @@ html{
 .menu {
 	height: 100%;
 	max-height: 200px;
+	border-radius: 5px !important;
 }
 
 body {
@@ -179,7 +252,7 @@ select {
 	.hero {
 		
 		overflow: hidden;
-		height: 25vw;
+		max-height: 500px;
 		background-color: #27292d;
 		border-radius: 10px;
 		transform: scale(1);
@@ -233,8 +306,7 @@ select {
 }
 
 .nav-item {
-	height: 100%;
-	max-height: 65px;
+	height: 100% !important;
 	color: gray;
 	margin: 0;
 	transition: background-color .8s;
@@ -242,7 +314,7 @@ select {
 }
 
 	.nav-item:hover {
-		background-color: #27292d;
+		background-color: #666;
 		transition: background-color .5s;
 
 	}
@@ -252,7 +324,7 @@ select {
 	padding-top: 1em !important;
 	color: #474747;
 	width: 100%;
-	height: 100%;
+	height: 100% !important;
 	vertical-align: middle;
 	font-weight: 700;
 }
@@ -269,8 +341,11 @@ select {
 	.item:active {
 		text-decoration: none;
 		color: #474747;
+		background-color: #27292D !important;
 	}
-
+	.active{
+		background-color: #27292D !important;
+	}
 
 	li {
 		text-align: center;
@@ -299,14 +374,16 @@ select {
 		padding-bottom: 4em;
 	}
 	.container-heros > form{
-		width: 15vw;
+		width: 250px;
+		max-height: 500px !important;
 		font-family: Arial;
-		display: inline-block;
 		font-weight: 600;
 		justify-content: space-evenly;
 		color: whitesmoke;
 		text-align: center;
 		margin: 10px auto;
+		margin-left: 10px;
+		margin-right: 10px;
 	}
 
 	
@@ -436,14 +513,15 @@ select {
 	padding-bottom: 4em;
 }
 
-.container-talents > span{
-	width: 15vw;
-	max-height: 35vw;
+.container-talents > div{
+	width: 250px;
+	max-height: 900px !important;
 	font-family: Arial;
 	justify-content: space-evenly;
 	color: whitesmoke !important;
 	overflow: auto;
 	margin: 10px auto;
+	margin-left: 10px;
 	padding: 1vw;
 }
 
@@ -460,11 +538,10 @@ padding-bottom: 1vw;
 	transition: transform .3s;
 	text-align: center;
 	cursor: pointer;
-	width: 200px;
-
+	overflow: auto;
 	background-color: #27292d;
-		padding-bottom: 2.5vw !important;
-		border-radius: 10px;
+	padding-bottom: 2.5vw !important;
+	border-radius: 10px;
 
 }
 
@@ -502,7 +579,7 @@ padding-bottom: 1vw;
 
 	}
 .lvl-container{
-	position: absolute;
+	position: fixed;
 	display: flexbox;
 	bottom: 0;
 	left: 0;
@@ -526,5 +603,5 @@ padding-bottom: 1vw;
 
 .mrs1{
 	overflow: auto;
-
+	padding-bottom: 4vw;
 }
