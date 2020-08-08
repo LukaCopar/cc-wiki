@@ -624,7 +624,8 @@ select {
 
 .container-talents > div{
 	width: 250px;
-	max-height: 900px !important;
+	min-height: 550px !important;
+	max-height: 700px;
 	font-family: Arial;
 	justify-content: space-evenly;
 	color: whitesmoke !important;
