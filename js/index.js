@@ -48,7 +48,7 @@ $(document).ready(() => {
 		}
 		$("#content").html("");
 		var parent = $("<div>");
-		parent.addClass("container-heroes");
+		parent.addClass("container-heros");
 		$("#content").append(parent);
 		heroes.forEach(function(hero) {
 			var form = $("<form>");
@@ -62,7 +62,7 @@ $(document).ready(() => {
 			img.attr("src", hero.img_url);
 			img.attr("alt", "jah nema");
 			var div2 = $("<div>");
-			div2.addClass("hero-name-skill");
+			div2.addClass("hero-name-skil");
 			var img2 = $("<img>");
 			img2.addClass("hero-skill-img");
 			img2.attr("src", hero.skill_img);
