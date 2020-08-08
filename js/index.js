@@ -2,12 +2,11 @@ var heroes;
 var talents;
 
 $(document).ready(() => {
-	$(function() {
-		FastClick.attach(document.body);
-	});
+	
+
 	if(window.localStorage.getItem("heroes") == null) {
 		$.ajax({
-			url: "/php/heroes.php"
+			url: "/cc-wiki/php/heroes.php"
 		}).done(function(c) {
 			heroes = JSON.parse(c);
 			var ins = [];
@@ -17,14 +16,42 @@ $(document).ready(() => {
 				}
 			});
 			window.localStorage.setItem("heroes", JSON.stringify(ins));
+			//console.log(c);
 		});
 	}
+
 	else {
-		heroes = JSON.parse(window.localStorage.getItem("heroes"));
+		var heroes = [];
+		var temps = JSON.parse(window.localStorage.getItem("heroes"));
+		temps.forEach(function(el) {
+			//console.log(el);
+			var hero = new Hero();
+			hero.id = el.id;
+			hero.name = el.name;
+			hero.biography = el.biography;
+			hero.img_url = el.img_url;
+			hero.img_url_evo = el.img_url_evo;
+			hero.skill_img = el.skill_img;
+			hero.warden = el.warden;
+			hero.mov_spd = el.mov_spd;
+			hero.atk_spd = el.atk_spd;
+			hero.atk = el.atk;
+			hero.hp = el.hp;
+			hero.acc = el.acc;
+			hero.ddg = el.ddg;
+			hero.crt = el.crt;
+			hero.crr = el.crr;
+			hero.crd = el.crd;
+			heroes.push(hero);
+		});
+		//console.log(heroes);
 	}
 
+	//Service worker
+	pizda();
+
 	$.ajax({
-		url: "/php/talents.php"
+		url: "/cc-wiki/php/talents.php"
 	}).done(function(c) {
 		talents = JSON.parse(c);
 		var prevName = "";
@@ -34,7 +61,7 @@ $(document).ready(() => {
 			if(e.name != prevName)
 				$.ajax({
 					type: "POST",
-					url: "/php/images.php",
+					url: "/cc-wiki/php/images.php",
 					data: {
 						url : e.img_url
 					}
@@ -334,3 +361,10 @@ $(document).on("click", ".hehe2", function (e) {
 		$(".skill_stats").html(txt);
 	});
 });
+
+function pizda() {
+	//console.log("ayy lmao");
+  	navigator.serviceWorker && navigator.serviceWorker.register('./sw.js').then(function(registration) {
+	  //console.log('Excellent, registered with scope: ', registration.scope);
+	});
+}

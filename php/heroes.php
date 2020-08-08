@@ -8,7 +8,8 @@ while ($xd = $lmao->fetch()) {
 	$skill1 = $pdo->query('SELECT * FROM hero_skills WHERE hero_id = '.$xd['id'].' AND level = '.$lvl.'');
 	$skill = $skill1->fetch();
 	$skill_img = $skill['img_url'] ?? 'no image';
-
+	$q = $pdo->query("SELECT * FROM hero_lvl WHERE hero_name = '". str_replace("'", "\'", $xd['name']) ."';");
+	$maxLvl = $q->fetch();
 	// if (isset($skill['img_url']))
 	// 	$skill_img = "../img/maelstrom.png";
 
@@ -21,6 +22,16 @@ while ($xd = $lmao->fetch()) {
 	$hero->name = $xd['name'];
 	$hero->img_url = $xd['img_url'];
 	$hero->skill_img = $skill_img;
+	$hero->biography = $xd["biography"];
+	$hero->img_url = $xd["img_url"];
+	$hero->img_url_evo = $xd["img_url_evo"];
+	$hero->skill = $skill;
+	//$hero->warden = $xd["warden"];
+	$hero->mov_spd = $xd["move_spd"];
+	$hero->atk_spd = $xd["atk_speed"];
+	$hero->atk_range = $xd["attack_range"];
+	$hero->atk = $maxLvl["attack"];
+	$hero->hp = $maxLvl["hp"];
 	array_push($heroes, $hero);
 	/*echo '
 	<form class="hero-open" target="_blank" action="./php/hero.php?hero=' . $xd['id'] . '"> 
