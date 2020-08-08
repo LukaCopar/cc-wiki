@@ -252,10 +252,14 @@ html {
 	100% {height: 100vh; bottom: 0px}
 }
 
+a:focus{
+	text-decoration: none !important;
+	color: #474747 !important;
 
+}
 /* width */
 ::-webkit-scrollbar {
-	width: 15px;
+	width: .5px;
   }
   
   /* Track */

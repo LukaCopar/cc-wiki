@@ -87,6 +87,7 @@ $(document).ready(() => {
 	$(".nav-item").click(function (e) {
 		//console.log(e.target.parentNode);
 		//console.log();
+		$("#navbar").scrollTop(e);
 		if ($("#navbar").hasClass("animate") && $(e.target.parentNode).hasClass("active")) {
 			$("#navbar").removeClass("animate");
 			var lis = $("#navbar").find('li');
@@ -98,7 +99,7 @@ $(document).ready(() => {
 				height: window.innerHeight * 0.09
 			}, function () {
 				$("#meni").css("bottom", "0");
-				$("#navbar").css("overflow", "auto");
+				$("#navbar").css("overflow", "hidden");
 			});
 		}
 		else if (!$("navbar").hasClass("animate")) {
