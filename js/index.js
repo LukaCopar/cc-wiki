@@ -16,6 +16,26 @@ $(document).ready(() => {
 		url: "/php/talents.php"
 	}).done(function(c) {
 		talents = JSON.parse(c);
+		var prevName = "";
+
+		var imgs = [];
+		talents.forEach(function (e) {
+			if(e.name != prevName)
+				$.ajax({
+					type: "POST",
+					url: "/php/images.php",
+					data: {
+						url : e.img_url
+					}
+				}).done(function(c) {
+					var img = c;
+					if(window.localStorage.getItem(e.name) == null) {
+						window.localStorage.setItem(e.name, img);
+					}
+					imgs.push(img);
+				});
+			prevName = e.name;
+		});
 	});
 
 
@@ -55,7 +75,7 @@ $(document).ready(() => {
 			h4.html(e.name);
 			p.html(e.description);
 			img.addClass("talent-img");
-			img.attr("src", e.img_url);
+			img.attr("src", window.localStorage.getItem(e.name));
 			img.attr("alt", "jah");
 			divM.addClass("mrs1");
 			
