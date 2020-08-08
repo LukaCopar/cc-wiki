@@ -137,11 +137,9 @@ $(document).ready(() => {
 			a2.attr("href", "../php/talent.php?name="+e.name+"&la=2&lvl="+e.level);
 
 			a1.addClass("hehe plus");
-			a1.attr("style", "float:left");
 			a1.attr("data", e.level);
 			a1.html("+");
 			a2.addClass("hehe minus");
-			a2.attr("style", "float:left");
 			a2.attr("data", e.level);
 			a2.html("-");
 
