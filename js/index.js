@@ -5,7 +5,6 @@ $(document).ready(() => {
 	
 
 	if(window.localStorage.getItem("heroes") == null) {
-		//console.log("wat");
 		$.ajax({
 			url: "/cc-wiki/php/heroes.php"
 		}).done(function(c) {
@@ -272,21 +271,6 @@ $(document).ready(() => {
 
 	});
 
-	$(".hero-open").click(function (e) {
-		e.preventDefault();
-		var txt = '<div class="container">';
-		//console.log($(this)[0].action);
-		$.ajax({
-			url: $(this)[0].action
-		}).done((content) => {
-			//console.log(content);
-			txt += content;
-			txt += "</div>";
-			$("#title").html("Hero");
-			$("#content").html(txt);
-		});
-	});
-
 });
 
 
@@ -312,10 +296,12 @@ $(document).on("click", ".hero-open", function (e) {
 		var hp = icons[5];
 		var ddg = icons[6];
 		var atk_spd = icons[1];
-		//console.log($(".hero_stats > .stat"));
+		$($(".hero_img").first().children()[0]).attr("src", window.localStorage.getItem("zeph"));
+		$($(".hero_skill_img").first().children()[0]).attr("src", window.localStorage.getItem("zeph"));
+		
 		$(".hero_stats > .stat").each(function(ind, el) {
 			icons.forEach(function(ell) {
-				console.log(ell.name == $(el).children()[0].id);
+				//console.log(ell.name == $(el).children()[0].id);
 				if(ell.name == $(el).children()[0].id) {
 					$(el).children().attr("src", ell.data);
 				}
