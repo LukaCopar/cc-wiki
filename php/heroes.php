@@ -16,22 +16,21 @@ while ($xd = $lmao->fetch()) {
 	if (isset($xd['img_url'])) {
 		$xd['img_url'] = "../img/zephyrica1.png";
 	}
-
 	$hero  = new \stdClass();
 	$hero->id = $xd['id'];
 	$hero->name = $xd['name'];
 	$hero->img_url = $xd['img_url'];
 	$hero->skill_img = $skill_img;
-	$hero->biography = $xd["biography"];
-	$hero->img_url = $xd["img_url"];
-	$hero->img_url_evo = $xd["img_url_evo"];
+	$hero->biography = $xd['biography'];
+	$hero->img_url = $xd['img_url'];
+	$hero->img_url_evo = $xd['img_url_evo'];
 	$hero->skill = $skill;
-	//$hero->warden = $xd["warden"];
-	$hero->mov_spd = $xd["move_spd"];
-	$hero->atk_spd = $xd["atk_speed"];
-	$hero->atk_range = $xd["attack_range"];
-	$hero->atk = $maxLvl["attack"];
-	$hero->hp = $maxLvl["hp"];
+	//$hero->warden = $xd['warden'];
+	$hero->mov_spd = $xd['move_spd'];
+	$hero->atk_spd = $xd['atk_speed'];
+	$hero->atk_range = $xd['attack_range'];
+	$hero->atk = $maxLvl['attack'];
+	$hero->hp = $maxLvl['hp'];
 	array_push($heroes, $hero);
 	/*echo '
 	<form class="hero-open" target="_blank" action="./php/hero.php?hero=' . $xd['id'] . '"> 
@@ -44,4 +43,5 @@ while ($xd = $lmao->fetch()) {
 
 }
 $JSON = json_encode($heroes);
+
 echo $JSON;
