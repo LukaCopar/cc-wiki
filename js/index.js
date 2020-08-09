@@ -5,9 +5,11 @@ $(document).ready(() => {
 	
 
 	if(window.localStorage.getItem("heroes") == null) {
+		//console.log("wat");
 		$.ajax({
 			url: "/cc-wiki/php/heroes.php"
 		}).done(function(c) {
+			//console.log(c);
 			heroes = JSON.parse(c);
 			var ins = [];
 			heroes.forEach(function(val) {
