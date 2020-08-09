@@ -254,7 +254,7 @@ html {
 
 a:focus{
 	text-decoration: none !important;
-	color: black !important;
+	color: #444;
 	background-color: gray !important;
 
 }
