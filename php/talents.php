@@ -1,25 +1,5 @@
 <?php
 require 'connection.php';
-$name = " ";
-$la = 0;
-$level = 1;
-if (isset($_GET['name']))
-	$name = $_GET['name'];
-
-if (isset($_GET['la']))
-	$la = $_GET['la'];
-
-if (isset($_GET['lvl']))
-	$level = $_GET['lvl'];
-
-if ($la == 1) {
-	$level++;
-}
-if ($level >= 10) {
-	$level = 10;
-}
-// echo $id;
-//echo $la;
 
 $lmao = $pdo->query('SELECT * FROM talents');
 $talents = [];

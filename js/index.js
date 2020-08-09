@@ -48,35 +48,37 @@ $(document).ready(() => {
 	}
 
 	//Service worker
-	pizda();
-
-	$.ajax({
+	
+	if(window.localStorage.getItem("talents") == null) {
+		$.ajax({
 		url: "/cc-wiki/php/talents.php"
-	}).done(function(c) {
-		talents = JSON.parse(c);
-		var prevName = "";
+		}).done(function(c) {
+			talents = JSON.parse(c);
+			console.log(c);
+			var prevName = "";
 
-		var imgs = [];
-		talents.forEach(function (e) {
-			if(e.name != prevName)
-				$.ajax({
-					type: "POST",
-					url: "/cc-wiki/php/images.php",
-					data: {
-						url : e.img_url
-					}
-				}).done(function(c) {
-					var img = c;
-					if(window.localStorage.getItem(e.name) == null) {
-						window.localStorage.setItem(e.name, img);
-					}
-					imgs.push(img);
-				});
-			prevName = e.name;
+			var imgs = [];
+			talents.forEach(function (e) {
+				if(e.name != prevName)
+					$.ajax({
+						type: "POST",
+						url: "/cc-wiki/php/images.php",
+						data: {
+							url : e.img_url
+						}
+					}).done(function(c) {
+						var img = c;
+						if(window.localStorage.getItem(e.name) == null) {
+							window.localStorage.setItem(e.name, img);
+						}
+						imgs.push(img);
+					});
+				prevName = e.name;
+			});
 		});
-	});
+	}
 
-
+	pizda();
 	$("#title").html("Heros");
 
 	$("#talents").click(function (e) {
@@ -97,6 +99,7 @@ $(document).ready(() => {
 		var parent = $("<div>");
 		parent.addClass("container-talents");
 		$("#content").append(parent);
+		console.log(talents);
 		talents.forEach(function(e, val) {
 			if(e.level == 1) {
 				var h3 = $("<h3>");
