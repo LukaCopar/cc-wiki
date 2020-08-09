@@ -31,7 +31,7 @@ $(document).ready(() => {
 			hero.biography = el.biography;
 			hero.img_url = el.img_url;
 			hero.img_url_evo = el.img_url_evo;
-			hero.skill_img = el.skill_img;
+			hero.skill_img = el.img_url;
 			hero.warden = el.warden;
 			hero.mov_spd = el.mov_spd;
 			hero.atk_spd = el.atk_spd;
@@ -54,7 +54,7 @@ $(document).ready(() => {
 		url: "/cc-wiki/php/talents.php"
 		}).done(function(c) {
 			talents = JSON.parse(c);
-			console.log(c);
+			//console.log(c);
 			var prevName = "";
 
 			var imgs = [];
@@ -189,13 +189,13 @@ $(document).ready(() => {
 			div.addClass("hero");
 			var img = $("<img>");
 			img.addClass("hero-card-img");
-			img.attr("src", hero.img_url);
+			img.attr("src", window.localStorage.getItem("zeph"));
 			img.attr("alt", "jah nema");
 			var div2 = $("<div>");
 			div2.addClass("hero-name-skil");
 			var img2 = $("<img>");
 			img2.addClass("hero-skill-img");
-			img2.attr("src", hero.skill_img);
+			img2.attr("src", window.localStorage.getItem("zeph"));
 			var h4 = $("<h4>");
 			h4.addClass("hero-name");
 			h4.html(hero.name);
@@ -211,7 +211,7 @@ $(document).ready(() => {
 		});
 	});
 	$(window).on('resize', function(el) {
-		if(!$("#navbar").hasClass("animate") && $(e.target.parentNode).hasClass("active")) {
+		if(!$("#navbar").hasClass("animate") && $(el.target.parentNode).hasClass("active")) {
 			$("#navbar").animate({
 				height: window.innerHeight * 0.09
 			}, 200, function () {
@@ -301,6 +301,24 @@ $(document).on("click", ".hero-open", function (e) {
 		txt += "</div>";
 		$("#title").html("Hero");
 		$("#content").html(txt);
+		var icons = JSON.parse(window.localStorage.getItem("icons"));
+		var atk = icons[0];
+		var acc = icons[7];
+		var crt = icons[2];
+		var crr = icons[3];
+		var crd = icons[4];
+		var hp = icons[5];
+		var ddg = icons[6];
+		var atk_spd = icons[1];
+		//console.log($(".hero_stats > .stat"));
+		$(".hero_stats > .stat").each(function(ind, el) {
+			icons.forEach(function(ell) {
+				console.log(ell.name == $(el).children()[0].id);
+				if(ell.name == $(el).children()[0].id) {
+					$(el).children().attr("src", ell.data);
+				}
+			});
+		});
 	});
 });
 

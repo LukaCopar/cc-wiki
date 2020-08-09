@@ -1,7 +1,7 @@
 {
   "name": "Castle Clash Calculator",
   "short_name": "CC Calculator",
-  "start_url": "localhost/cc-wiki/",
+  "start_url": ".",
   "display": "standalone",
   "background_color": "#fff",
   "description": "A calculator",

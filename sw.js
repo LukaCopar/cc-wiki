@@ -1,16 +1,23 @@
 const cacheName = 'cc-calc';
 const staticAssets = [	
+	//JavaScript
+	  './js/fastclick.js',
+	  './js/heroes.js',
+	  './js/jquery.min.js',
+	  './js/classes/builds.js',
+	  './js/classes/heroes.js',
+	  './js/classes/slider.js',
+	  './js/classes/talents.js',
+	//CSS
+	//PHP
+
+	//HTML
+
   './manifest.webmanifest',
   './header.php',
   './index.php',
   './css/style.css',
-  './js/fastclick.js',
-  './js/heroes.js',
-  './js/jquery.min.js',
-  './js/classes/builds.js',
-  './js/classes/heroes.js',
-  './js/classes/slider.js',
-  './js/classes/talents.js',
+
   './js/index.js',
   './php/heroes.php',
   './php/talents.php',
@@ -18,13 +25,13 @@ const staticAssets = [
 ];
 
 self.addEventListener('install', async e => {
-	console.log(123);
+	//console.log(123);
   const cache = await caches.open(cacheName);
-	console.log(456);
+	//console.log(456);
   await cache.addAll(staticAssets);
-	console.log(789);
+	//console.log(789);
   return self.skipWaiting();
-	console.log(101112);
+	//console.log(101112);
 });
 
 self.addEventListener('activate', e => {
@@ -32,7 +39,7 @@ self.addEventListener('activate', e => {
 });
 
 self.addEventListener('fetch', async e => {
-	console.log("fetch");
+	//console.log("fetch");
   const req = e.request;
   const url = new URL(req.url);
 
@@ -44,14 +51,14 @@ self.addEventListener('fetch', async e => {
 });
 
 async function cacheFirst(req) {
-	console.log("cache");
+	//console.log("cache");
   const cache = await caches.open(cacheName);
   const cached = await cache.match(req);
   return cached || fetch(req);
 }
 
 async function networkAndCache(req) {
-	console.log("network and fetch");
+	//console.log("network and fetch");
   const cache = await caches.open(cacheName);
   try {
     const fresh = await fetch(req);
