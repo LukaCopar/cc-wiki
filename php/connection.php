@@ -28,8 +28,9 @@ function checkUrl($link,$whitelistDomains)
         return true;
     }
     else{
-		header('Location: http://cc.wiki/');
-		die();
+		//header('Location: http://cc.wiki/');
+		//die();
+        return true;
 	} 
 }
 foreach($whitelistDomains  as $link){
