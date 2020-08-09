@@ -7,222 +7,6 @@ html {
         touch-action: manipulation;
 }
 
-@media only screen and (max-width: 900px) {
-	#content{
-		padding-top: 200px !important;
-		overflow: initial !important;
-	}
-
-	#hero{
-		padding-top: 10vw !important;
-		max-width: 100% !important;
-		display: flex !important;
-		justify-content: space-evenly !important;
-		height: auto !important;
-		flex-wrap: wrap !important;
-		flex-direction: column !important;
-		overflow: hidden !important;
-		padding-bottom: 10vw !important;
-	}
-	#hero > div{
-		width: 100% !important;
-		margin: 10px auto;
-	}
-	.skill1{
-		max-height: 400px !important;
-		overflow:  hidden !important;
-		flex-wrap: wrap !important;
-		flex-direction: column !important;
-	}
-	.skill1 > div{
-		width: 100% !important;
-		text-align: center !important;
-	}
-	.skill_desc{
-		margin: 0 auto !important;
-		text-align: center !important;
-		font-size: 9pt !important;
-		width: 100% !important;
-	}
-	.hero_skill_img {
-		height: auto !important;
-	}
-	.stat{
-		font-size: 16pt !important;
-
-	}
-	.level > a{
-		width: 50px !important;
-		height: 50px !important;
-
-	}
-	.level{
-		margin: 0 auto !important;
-		font-size: 8pt !important;
-		width: auto !important;
-		height: auto !important;
-	}.mrs{
-		margin: 0 auto !important;
-		width: auto !important;
-		font-size: 22pt !important;
-	}
-.hero1{
-	display: flex !important;
-	justify-content: space-evenly !important;
-	height: 100% !important;
-	flex-wrap: wrap !important;
-	flex-direction: row !important;
-	overflow: auto;
-
-}
-.hero_img{
-	height: auto !important;
-	width: auto !important;
-}
-.hero_img > h3{
-	font-size: 20pt !important;
-
-}
-.hero1 > div{
-	margin: 10px auto;
-	width: 100% !important;
-	height: auto !important;
-	overflow:  hidden !important;
-}
-.hero_stats {
-	overflow: hidden !important;
-	padding: 0 !important;
-	width: 100% !important;
-	height: 100% !important;
-	max-width: 100% !important;
-}
-
-	.hero_stats > div {
-		margin-bottom: 10px auto;
-		height: 35px !important;
-		max-width: 100% !important;
-	}
-	.container{
-		padding-top: 10vw !important;
-		width: 90% !important;
-		height: 100% !important;
-
-	}
-	.container-heros {
-		padding-top: 10vw !important;
-		width: 90% !important;
-		column-gap: 0 !important;
-	}
-	.container-heros > form{
-		
-		width: 30% !important;
-		color: whitesmoke !important;
-	}
-	.hero-name-skil{
-		height: 40px !important;
-		overflow: hidden;
-		font-size: 30pt !important;
-		width: 100% !important;
-	}
-	.hero-name{
-		font-size: 10pt !important;
-
-	}
-	.hero-card-img{
-		height: auto !important;
-		width: auto !important;
-
-	}
-	.hero-skill-img{
-		height: 30px !important;
-	}
-	.hero{
-		max-width: 100% !important;
-		height: auto !important; 
-
-	}
-	.container-talents{
-		padding-top: 10vw !important;
-		font-size: 12pt !important;
-		width: 90% !important;
-	}
-	.container-talents > div{
-		padding-bottom: 10px !important ;
-		width: 45% !important;
-		color: whitesmoke !important;
-	
-}
-.lvl-container > a{
-	font-size: 14pt !important;
-}
-.lvl-container{
-	height: 30px !important;
-	bottom: 0 !important;
-}
-.mrs1{
-	font-size: 12pt !important;
-}
-	hr{
-		display: block !important;
-		height: 2px !important;
-		margin: 0 auto !important;
-	}
-
-	h4{
-		font-size: medium !important;
-
-	}
-	.item{
-	text-align: center !important;
-	font-size: 12pt;
-	padding: 0 !important;
-	}
-	.talent-img{
-		padding-bottom: 1vw;
-		height: 10vw !important;
-		}
-	.hehe{
-		height: 100% !important;
-		font-size: inherit;
-	}
-	.hehe:hover{
-		color: #27292D !important;
-	}
-	.kurac{
-		font-size: 10pt !important;
-		overflow: auto;
-
-	}
-	.talent-lvl{
-		height: 5.5vw !important;
-
-	}
-
-#meni{
-	background-color: #27292d !important;
-	width: 100% !important;
-	display: flex;
-	height: 60px !important;
-	justify-content: space-evenly;
-
-	}
-	#meni > li{
-	justify-content: space-evenly !important;
-		text-align: center !important;
-		padding: 2px !important;
-		font-size: 13pt !important;
-	
-	
-	}
-
-
-	::-webkit-scrollbar {
-		width: .5px !important;
-		transition: width 1s !important;
-	  }
-
-
-}
 
 .menu .active>a {
     background: #474747 !important;
@@ -236,7 +20,7 @@ html {
 	height: 70px ;
 		display: flex;
 	}#meni > li{
-		font-size: 20pt !important;
+		font-size: 20pt;
 	
 	
 	}
@@ -304,7 +88,7 @@ html{
 }
 
 .menu {
-	height: 80px !important;
+	height: 80px;
 }
 
 body {
@@ -715,4 +499,234 @@ padding-bottom: 1vw;
 }
 .hero-skill-img{
 	height: 60px;
+}
+
+
+
+@media only screen and (max-width: 900px) {
+	#content{
+		padding-top: 200px ;
+		overflow: initial ;
+	}
+
+	#hero{
+		padding-top: 10vw ;
+		max-width: 100% ;
+		display: flex ;
+		justify-content: space-evenly ;
+		height: auto ;
+		flex-wrap: wrap ;
+		flex-direction: column ;
+		overflow: hidden ;
+		padding-bottom: 10vw ;
+	}
+	#hero > div{
+		width: 100% ;
+		margin: 10px auto;
+	}
+	.skill1{
+		max-height: 400px ;
+		overflow:  hidden ;
+		flex-wrap: wrap ;
+		flex-direction: column ;
+	}
+	.skill1 > div{
+		width: 100% ;
+		text-align: center ;
+	}
+	.skill_desc{
+		margin: 0 auto ;
+		text-align: center ;
+		font-size: 9pt ;
+		width: 100% ;
+	}
+	.hero_skill_img {
+		height: auto ;
+	}
+	.stat{
+		font-size: 16pt ;
+
+	}
+	.level > a{
+		width: 50px ;
+		height: 50px ;
+
+	}
+	.level{
+		margin: 0 auto ;
+		font-size: 8pt ;
+		width: auto ;
+		height: auto ;
+	}.mrs{
+		margin: 0 auto ;
+		width: auto ;
+		font-size: 22pt ;
+	}
+.hero1{
+	display: flex ;
+	justify-content: space-evenly ;
+	height: 100% ;
+	flex-wrap: wrap ;
+	flex-direction: row ;
+	overflow: auto;
+
+}
+.hero_img{
+	height: auto ;
+	width: auto ;
+}
+.hero_img > h3{
+	font-size: 20pt ;
+
+}
+.hero1 > div{
+	margin: 10px auto;
+	width: 100% ;
+	height: auto ;
+	overflow:  hidden ;
+}
+.hero_stats {
+	overflow: hidden ;
+	padding: 0 ;
+	width: 100% ;
+	height: 100% ;
+	max-width: 100% ;
+}
+
+	.hero_stats > div {
+		margin-bottom: 10px auto;
+		height: 35px ;
+		max-width: 100% ;
+	}
+	.container{
+		padding-top: 10vw ;
+		width: 90% ;
+		height: 100% ;
+
+	}
+	.container-heros {
+		padding-top: 10vw ;
+		width: 90% ;
+		column-gap: 0 ;
+	}
+	.container-heros > form{
+		
+		width: 30% ;
+		color: whitesmoke ;
+	}
+	.hero-name-skil{
+		height: 40px ;
+		overflow: hidden;
+		font-size: 30pt ;
+		width: 100% ;
+	}
+	.hero-name{
+		font-size: 10pt ;
+
+	}
+	.hero-card-img{
+		height: auto ;
+		width: auto ;
+
+	}
+	.hero-skill-img{
+		height: 30px ;
+	}
+	.hero{
+		max-width: 100% ;
+		height: auto ; 
+
+	}
+	.container-talents{
+		padding-top: 10vw ;
+		font-size: 12pt ;
+		width: 90% ;
+	}
+	.container-talents > div{
+		padding-bottom: 10px  ;
+		width: 45% ;
+		color: whitesmoke ;
+	
+}
+.lvl-container > a{
+	font-size: 14pt ;
+}
+.lvl-container{
+	height: 30px ;
+	bottom: 0 ;
+}
+.mrs1{
+	font-size: 12pt ;
+}
+	hr{
+		display: block ;
+		height: 2px ;
+		margin: 0 auto ;
+	}
+
+	h4{
+		font-size: medium ;
+
+	}
+	.item{
+	text-align: center ;
+	padding: 0 ;
+	}
+	.talent-img{
+		padding-bottom: 1vw;
+		height: 10vw ;
+		}
+	.hehe{
+		height: 100% ;
+		font-size: inherit;
+	}
+	.hehe:hover{
+		color: #27292D ;
+	}
+	.kurac{
+		font-size: 10pt ;
+		overflow: auto;
+
+	}
+	.talent-lvl{
+		height: 5.5vw ;
+
+	}
+
+#meni{
+	background-color: #27292d ;
+	width: 100% ;
+	display: flex;
+	height: 60px ;
+	justify-content: space-evenly;
+
+	}
+	#meni > li{
+	justify-content: space-evenly ;
+		text-align: center ;
+		font-size: 12pt;
+	
+	
+	}
+
+
+	::-webkit-scrollbar {
+		width: .5px ;
+		transition: width 1s ;
+	  }
+
+	  .menu {
+		height: 50px !important;
+	}
+}
+
+@media only screen and (max-width: 350px) {
+	#meni > li {
+		font-size: 6pt !important;
+	}
+	.menu {
+		height: 30px !important;
+		bottom: 0;
+	}
+
 }
