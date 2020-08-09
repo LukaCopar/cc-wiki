@@ -278,11 +278,11 @@ $(document).ready(() => {
 $(document).on("click", ".hero-open", function (e) {
 	e.preventDefault();
 	var txt = '<div class="container">';
-	//console.log($(this)[0].action);
+	console.log($(this)[0].action);
 	$.ajax({
 		url: $(this)[0].action
 	}).done((content) => {
-		//console.log(content);
+		console.log("content");
 		txt += content;
 		txt += "</div>";
 		$("#title").html("Hero");
