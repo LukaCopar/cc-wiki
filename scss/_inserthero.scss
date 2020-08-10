@@ -3,8 +3,9 @@
 	margin-left: 20%;
 	margin-right: 20%;
 	overflow: hidden;
-}
-.submit {
+	}
+	
+	.submit {
 	border: none;
 	border-radius: 6px;
 	height: 3.4em;
@@ -14,10 +15,11 @@
 	padding: 0;
 	background-color: #ed3b85;
 	transition: background-color .5s;
-}
+	}
+	
 	.submit:hover {
-		cursor: pointer;
-		background-color: #a32758;
-		transition: background-color .5s;
+	  cursor: pointer;
+	  background-color: #a32758;
+	  transition: background-color .5s;
 	}
 /* insert_hero */
