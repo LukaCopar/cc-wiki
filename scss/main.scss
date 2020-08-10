@@ -1,8 +1,8 @@
-@import './hero';
-@import './heros';
-@import './talents';
-@import './inserthero';
-@import './navbar';
+@import 'hero';
+@import 'heros';
+@import 'talents';
+@import 'inserthero';
+@import 'navbar';
 
 
 
@@ -207,14 +207,13 @@ html {
   }
   .container-talents{
 	padding-top: 10vw ;
-	font-size: 12pt ;
 	width: 90% ;
+	column-gap: 0 ;
   }
   .container-talents > div{
 	padding-bottom: 10px  ;
-	width: 45% ;
-	color: whitesmoke ;
-  
+	width: 30%;
+	color: whitesmoke ;  
   }
   .lvl-container > a{
   font-size: 14pt ;
@@ -223,17 +222,19 @@ html {
   height: 30px ;
   bottom: 0 ;
   }
-  .mrs1{
-  font-size: 12pt ;
+  .mrs1 > p{
+  font-size: 8pt !important;
+  }
+  .mrs1 > h4{
+	  font-size: 10pt !important;
+  }
+  .talent-lvl > h3{
+	  font-size: 10pt !important;
   }
   hr{
 	display: block ;
 	height: 2px ;
 	margin: 0 auto ;
-  }
-  h4{
-	font-size: medium ;
-  
   }
   .item{
   text-align: center ;
