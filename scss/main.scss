@@ -1,0 +1,317 @@
+@import './hero';
+@import './heros';
+@import './talents';
+@import './inserthero';
+@import './navbar';
+
+
+
+@keyframes con {
+	0% {height: 9vh; bottom: 0px}
+	100% {height: 100vh; bottom: 0px}
+	}
+
+html {
+	-ms-touch-action: manipulation;
+		touch-action: manipulation;
+  }  
+  #content{
+  
+  padding-top: 70px;
+  }
+  a:focus{
+  text-decoration: none !important;
+  color: #444;
+  background-color: gray !important;
+  
+  }
+  a:hover{
+  color: #777 !important;
+  background-color: inherit !important;
+  transition: background-color .2s;
+  
+  }
+  ::-webkit-scrollbar {
+  width: .5px;
+  }
+  ::-webkit-scrollbar-track {
+  background: #474747;
+  }
+  ::-webkit-scrollbar-thumb {
+  background: #666;
+  border-radius: 10px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+  background: #999;
+  border-radius: 5px;
+  }
+  .animate {
+  /*animation: con 2s forwards cubic-bezier(.59,.65,.57,1.02);*/
+  }
+  .animate-back {
+  /*animation: con 2s forwards cubic-bezier(.59,.65,.57,1.02) reverse;*/
+  }
+  a {
+  text-decoration: none;
+  color:#474747; 
+  }
+  body {
+  background-color: #0f1116;
+  color: #777;
+	}
+  .active{
+	background-color: #27292D !important;
+  }
+  li {
+	text-align: center;
+	height: 8vh;
+	width: 20%;	
+  }
+  .container {
+	width: 80%;
+	margin: 0 auto;
+	height: auto;
+	justify-content: space-evenly;
+  }
+
+  
+  @media only screen and (max-width: 900px) {
+  #content{
+	padding-top: 0px;
+  }
+  
+  #hero{
+	padding-top: 10vw ;
+	max-width: 100% ;
+	display: flex ;
+	justify-content: space-evenly ;
+	height: auto ;
+	flex-wrap: wrap ;
+	flex-direction: column ;
+	overflow: hidden ;
+	padding-bottom: 10vw ;
+  }
+  #hero > div{
+	width: 100% ;
+	margin: 10px auto;
+  }
+  .skill1{
+	max-height: 400px ;
+	overflow:  hidden ;
+	flex-wrap: wrap ;
+	flex-direction: column ;
+  }
+  .skill1 > div{
+	width: 100% ;
+	text-align: center ;
+  }
+  .skill_desc{
+	margin: 0 auto ;
+	text-align: center ;
+	font-size: 9pt ;
+	width: 100% ;
+  }
+  .hero_skill_img {
+	height: auto ;
+  }
+  .stat{
+	font-size: 16pt ;
+  
+  }
+  .level > a{
+	width: 50px ;
+	height: 50px ;
+  
+  }
+  .level{
+	margin: 0 auto ;
+	font-size: 8pt ;
+	width: auto ;
+	height: auto ;
+  }.mrs{
+	margin: 0 auto ;
+	width: auto ;
+	font-size: 22pt ;
+  }
+  .hero1{
+  display: flex ;
+  justify-content: space-evenly ;
+  height: 100% ;
+  flex-wrap: wrap ;
+  flex-direction: row ;
+  overflow: auto;
+  
+  }
+  .hero_img{
+  height: auto ;
+  width: auto ;
+  }
+  .hero_img > h3{
+  font-size: 20pt ;
+  
+  }
+  .hero1 > div{
+  margin: 10px auto;
+  width: 100% ;
+  height: auto ;
+  overflow:  hidden ;
+  }
+  .hero_stats {
+  overflow: hidden ;
+  padding: 0 ;
+  width: 100% ;
+  height: 100% ;
+  max-width: 100% ;
+  }
+  
+  .hero_stats > div {
+	margin-bottom: 10px auto;
+	height: 35px ;
+	max-width: 100% ;
+  }
+  .container{
+	padding-top: 10vw ;
+	width: 90% ;
+	height: 100% ;
+  
+  }
+  .container-heros {
+	padding-top: 10vw ;
+	width: 90% ;
+	column-gap: 0 ;
+  }
+  .container-heros > form{
+	
+	width: 30% ;
+	color: whitesmoke ;
+  }
+  .hero-name-skil{
+	height: 40px ;
+	overflow: hidden;
+	font-size: 30pt ;
+	width: 100% ;
+  }
+  .hero-name{
+	font-size: 10pt ;
+  
+  }
+  .hero-card-img{
+	height: auto ;
+	width: auto ;
+  
+  }
+  .hero-skill-img{
+	height: 30px ;
+  }
+  .hero{
+	max-width: 100% ;
+	height: auto ; 
+  
+  }
+  .container-talents{
+	padding-top: 10vw ;
+	font-size: 12pt ;
+	width: 90% ;
+  }
+  .container-talents > div{
+	padding-bottom: 10px  ;
+	width: 45% ;
+	color: whitesmoke ;
+  
+  }
+  .lvl-container > a{
+  font-size: 14pt ;
+  }
+  .lvl-container{
+  height: 30px ;
+  bottom: 0 ;
+  }
+  .mrs1{
+  font-size: 12pt ;
+  }
+  hr{
+	display: block ;
+	height: 2px ;
+	margin: 0 auto ;
+  }
+  
+  h4{
+	font-size: medium ;
+  
+  }
+  .item{
+  text-align: center ;
+  padding: 0 ;
+  }
+  .talent-img{
+	padding-bottom: 1vw;
+	height: 10vw ;
+	}
+  .hehe{
+	height: 100% ;
+	font-size: inherit;
+  }
+  .hehe:hover{
+	color: #27292D ;
+  }
+  .kurac{
+	font-size: 10pt ;
+	overflow: auto;
+  
+  }
+  .talent-lvl{
+	height: 5.5vw ;
+  
+  }
+  
+  #meni{
+  background-color: #27292d ;
+  width: 100% ;
+  display: flex;
+  height: 60px ;
+  justify-content: space-evenly;
+  
+  }
+  #meni > li{
+  justify-content: space-evenly ;
+	text-align: center ;
+	font-size: 12pt;
+  
+  
+  }
+  
+  
+  ::-webkit-scrollbar {
+	width: .5px ;
+	transition: width 1s ;
+	}
+  
+	.menu {
+	height: 50px !important;
+  }
+  }
+  @media only screen and (max-width: 350px) {
+  #meni > li {
+	font-size: 6pt !important;
+  }
+  .menu {
+	height: 30px !important;
+	bottom: 0;
+  }
+  
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
