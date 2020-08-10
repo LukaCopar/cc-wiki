@@ -71,21 +71,21 @@ $hero = $lmao->fetch();
 			</div>
 			<div class="hero_stats">
 				<h4>lvl: 200 devo</h4>
-				<div class="stat"> <img class="stat_img" id="hp" style="max-height: 100%;" src="../img/ico_hp.png" alt="nema slike" /> HP: <?php echo ($hero['hp']);  ?> </div>
-				<div class="stat"> <img class="stat_img" id="attack" style="max-height: 100%;" src="../img/ico_attack.png" alt="nema slike" />ATK: <?php echo ($hero['attack']);  ?> </div>
-				<div class="stat"> <img class="stat_img" id="attack_speed" style="max-height: 100%;" src="../img/ico_attackspeed.png" alt="nema slike" /> ATK SPD: <?php echo ($atkspd);  ?> </div>
-				<div class="stat"> <img class="stat_img" id="crit" style="max-height: 100%;" src="../img/ico_crit.png" alt="nema slike" /> CRIT: <?php echo ($crit);  ?> </div>
-				<div class="stat"> <img class="stat_img" id="dodge" style="max-height: 100%;" src="../img/ico_dodge.png" alt="nema slike" /> DODGE: <?php echo ($dodge);  ?> </div>
-				<div class="stat"> <img class="stat_img" id="crit_damage" style="max-height: 100%;" src="../img/ico_hit.png" alt="nema slike" /> CRIT DMG: <?php echo ($crit_dmg);  ?> </div>
-				<div class="stat"> <img class="stat_img" id="mov_speed" style="max-height: 100%;" src="../img/ico_movespeed.png" alt="nema slike" /> MOVEMENT SPD: <?php echo ($movspd);  ?> </div>
-				<div class="stat"> <img class="stat_img" id="accuracy" style="max-height: 100%;" src="../img/ico_roquet.png" alt="nema slike" /> ACC: <?php echo ($acc);  ?> </div>
-				<div class="stat"> <img class="stat_img" id="crit_resist" style="max-height: 100%;" src="../img/ico_tenacity.png" alt="nema slike" /> CRIT Resist: <?php echo ($crit_resist);  ?> </div>
+				<div class="stat"> <img class="stat_img" id="hp"  src="../img/ico_hp.png" alt="nema slike" /> HP: <?php echo ($hero['hp']);  ?> </div>
+				<div class="stat"> <img class="stat_img" id="attack"  src="../img/ico_attack.png" alt="nema slike" />ATK: <?php echo ($hero['attack']);  ?> </div>
+				<div class="stat"> <img class="stat_img" id="attack_speed"  src="../img/ico_attackspeed.png" alt="nema slike" /> ATK SPD: <?php echo ($atkspd);  ?> </div>
+				<div class="stat"> <img class="stat_img" id="crit"  src="../img/ico_crit.png" alt="nema slike" /> CRIT: <?php echo ($crit);  ?> </div>
+				<div class="stat"> <img class="stat_img" id="dodge"  src="../img/ico_dodge.png" alt="nema slike" /> DODGE: <?php echo ($dodge);  ?> </div>
+				<div class="stat"> <img class="stat_img" id="crit_damage"  src="../img/ico_hit.png" alt="nema slike" /> CRIT DMG: <?php echo ($crit_dmg);  ?> </div>
+				<div class="stat"> <img class="stat_img" id="mov_speed"  src="../img/ico_movespeed.png" alt="nema slike" /> MOVEMENT SPD: <?php echo ($movspd);  ?> </div>
+				<div class="stat"> <img class="stat_img" id="accuracy"  src="../img/ico_roquet.png" alt="nema slike" /> ACC: <?php echo ($acc);  ?> </div>
+				<div class="stat"> <img class="stat_img" id="crit_resist"  src="../img/ico_tenacity.png" alt="nema slike" /> CRIT Resist: <?php echo ($crit_resist);  ?> </div>
 			</div>
 		</div>
 		<div class="skill1">
 
 			<div class="hero_skill_img">
-				<img style="max-height: 100%;" src="<?php echo $skill['img_url'];  ?>" alt="nema slike" />
+				<img  src="<?php echo $skill['img_url'];  ?>" alt="nema slike" />
 			</div>
 
 			<div class="skill_stats">
