@@ -22,17 +22,17 @@ text-align: center;
 .hero_stats {
 padding-left: 5vw;
 overflow: auto;
+display: flex;
 flex-wrap: wrap;
 flex-direction: column;
-display: flex;
 float: right;
+row-gap: 5px;
 width: 75%;
-overflow: hidden ;
 max-width: 100%;
 }
 .hero_stats > div {
 	height: 2vw;
-	max-width: 49%;
+	max-width: 100%;
 	font-family: Arial;
 	font-weight: 600;
 }
@@ -41,6 +41,14 @@ display: inline-block;
 vertical-align: middle;
 height: 100%;
 padding-right: 10px;
+}
+.skill_stats {
+flex-wrap: wrap;
+flex-direction: column;
+display: flex;
+float: right;
+width: 75%;
+height: 100% !important;
 }
 .skill_desc {
 height: 100%;
@@ -55,15 +63,16 @@ margin: 10px;
 overflow: hidden;
 }
 .skill1 {
-overflow: auto;
+overflow: hidden;
 display: flex;
 color: gray;
 width: 100%;
+margin: auto;
 background-color: none;
-height: 100%;
+padding-top: 20px;
 }
 .skill1 > div{
-	width: 30%;
+	height: inherit;
 }
 .stat {
 font-size: 1.3vw;
@@ -91,10 +100,12 @@ margin: 2px;
 		text-align: center;
 
 	}
-	.hero_skill_img > img{
-		width: auto;
-		height: 200px;
+	.hero_skill_img {
+		margin-right: 5vw;
+		padding: 1vw;
+		width: 15vw;
+		height: 9vw;
 		vertical-align: middle;
-		text-align: center;
+		text-align: right;
 		}
 /* hero */

@@ -12,29 +12,22 @@ var talents;
 			setTimeout(resizeend, delta);
 		}
 	});
-	
 	function resizeend() {
 		if (new Date() - rtime < delta) {
 			setTimeout(resizeend, delta);
 		} else {
-
 			if($("#navbar").hasClass("animate")) {
 				$("#navbar").css("top", "0");
 				$("#navbar").css("height", "auto");
 				}
 			else {
-				//console.log(1);
 					$("#meni").removeAttr('style');
 					$("#navbar").removeAttr('style');
 					$("#meni").css("position", "fixed");
 					$("#meni").css("bottom", "0");
 					$("#navbar").css("height", "0");
 					$("#navbar").css("overflow", "hidden");
-				
 			}
-
-			
-
 			timeout = false;
 		}               
 	}
@@ -274,7 +267,6 @@ $(document).ready(() => {
 			$("#meni").css("top", "0");
 			$("#meni").css("width", "100%");
 			$("#meni").css("z-index", "100");
-			$("#meni").css("height", "9vh");
 			$("#navbar").css("overflow", "auto");
 		}
 	});

@@ -39,6 +39,14 @@
 		</div>
 		<!-- Extra -->
 
+	<div id="build">
+<div>a</div>
+<div>b</div>
+<div>c</div>
+<div>d</div>
+
+	</div>
+
 	</div>
 	<div id="navbar">
 		<?php
