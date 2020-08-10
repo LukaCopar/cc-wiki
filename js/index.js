@@ -1,28 +1,45 @@
 var heroes;
 var talents;
 
-$(window).on('resize', function(el) {
-		if(!$("#navbar").hasClass("animate") && $(el.target.parentNode).hasClass("active")) {
-			$("#navbar").animate({
-				height: window.innerHeight * 0.09
-			}, 200, function () {
-				$("#meni").css("bottom", "0");
-				$("#navbar").css("overflow", "hidden");
-			});
-		}
-		else {
-			$("#navbar").animate({
-				height: window.innerHeight
-			}, 200, function () {
-				$("#meni").css("position", "fixed");
-				$("#meni").css("top", "0");
-				$("#meni").css("width", "100%");
-				$("#meni").css("z-index", "100");
-				$("#meni").css("height", "9vh");
-				$("#navbar").css("overflow", "auto");
-			});
+//RESIZING OF WINDOW
+	var rtime;
+	var timeout = false;
+	var delta = 200;
+	$(window).resize(function() {
+		rtime = new Date();
+		if (timeout === false) {
+			timeout = true;
+			setTimeout(resizeend, delta);
 		}
 	});
+	
+	function resizeend() {
+		if (new Date() - rtime < delta) {
+			setTimeout(resizeend, delta);
+		} else {
+
+			if($("#navbar").hasClass("animate")) {
+				$("#navbar").css("top", "0");
+				$("#navbar").css("height", "auto");
+				}
+			else {
+				//console.log(1);
+					$("#meni").removeAttr('style');
+					$("#navbar").removeAttr('style');
+					$("#meni").css("position", "fixed");
+					$("#meni").css("bottom", "0");
+					$("#navbar").css("height", "0");
+					$("#navbar").css("overflow", "hidden");
+				
+			}
+
+			
+
+			timeout = false;
+		}               
+	}
+
+
 
 
 $(document).ready(() => {
@@ -248,8 +265,12 @@ $(document).ready(() => {
 			$("#navbar").animate({
 				height: window.innerHeight * 0.09
 			}, function () {
+			$("#meni").removeAttr('style');
+			$("#navbar").removeAttr('style');
 				$("#meni").css("bottom", "0");
 				$("#navbar").css("overflow", "hidden");
+				$("#navbar").css("height", "0");
+				$("#meni").css("position", "fixed")
 			});
 		}
 		else if (!$("navbar").hasClass("animate")) {
@@ -266,8 +287,9 @@ $(document).ready(() => {
 				$("#meni").css("top", "0");
 				$("#meni").css("width", "100%");
 				$("#meni").css("z-index", "100");
-				$("#meni").css("height", "9vh");
 				$("#navbar").css("overflow", "auto");
+				$("#navbar").css("visibility", "none");
+				$("#navbar").css("padding-top", "10px");
 			});
 			$(e.target.parentNode).addClass("active");
 		}

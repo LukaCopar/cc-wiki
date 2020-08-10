@@ -1,0 +1,65 @@
+/* talents */
+.container-talents {
+	margin: 0 auto;
+	width: 80%;
+	display: flex;
+	flex-wrap: wrap;
+	column-gap: 20px;
+	row-gap: 20px;
+	flex-flow: row wrap;
+	align-items: stretch;
+	justify-content: space-evenly;
+	font-size: 15pt !important;
+	padding-bottom: 4em;
+	
+}
+.container-talents > div{
+	width: 250px;
+	padding: 5px;
+	font-family: Arial;
+	color: whitesmoke !important;
+	overflow: hidden;
+}
+.talent-img{
+
+padding-bottom: 1vw;
+}
+.lvl-container{
+	position: fixed;
+	display: flex;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	height: 9%;
+	overflow: hidden;
+}
+.lvl-container > a{
+	width: 50% !important;
+	background-color: gray;
+	text-align: center;
+	font-size: 20pt;
+}
+.mrs1{
+	padding-bottom: 4vw;
+}
+.talent {
+	transform: scale(1);
+	transition: transform .3s;
+	text-align: center;
+	cursor: pointer;
+	overflow: auto;
+	background-color: #27292d;
+	padding-bottom: 2.5vw !important;
+	border-radius: 10px;
+
+}
+.talent:hover{
+	transform: scale(1.02);
+	transition: transform .1s;
+}
+.talent-lvl{
+	color: whitesmoke !important;
+	font-size: 3vw;
+	height: 3.2vw;
+}
+/* talents */
