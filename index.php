@@ -23,7 +23,7 @@
 	<script src="js/classes/slider.js"></script>
 	<script src="js/index.js"></script>
 	<script type='application/javascript' src='./js/fastclick.js'></script>
-	<link rel="stylesheet" href="css/style.css" type="text/css">
+	<link rel="stylesheet" href="./css/main.css" type="text/css">
 	<link rel="manifest" href="./manifest.webmanifest">
 
 </head>

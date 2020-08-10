@@ -1,0 +1,23 @@
+/* insert_hero */
+.insert-field {
+	margin-left: 20%;
+	margin-right: 20%;
+	overflow: hidden;
+}
+.submit {
+	border: none;
+	border-radius: 6px;
+	height: 3.4em;
+	width: 7.8em;
+	color: white;
+	font-weight: 700;
+	padding: 0;
+	background-color: #ed3b85;
+	transition: background-color .5s;
+}
+	.submit:hover {
+		cursor: pointer;
+		background-color: #a32758;
+		transition: background-color .5s;
+	}
+/* insert_hero */
