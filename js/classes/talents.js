@@ -7,7 +7,7 @@ class Talent {
 		if(name === undefined)
 			this.name = "";
 		if(level === undefined)
-			this.level = 0;
+			this.lvl = 0;
 		if(desc === undefined)
 			this.description = "";
 
@@ -19,8 +19,8 @@ class Talent {
 	}
 
 	replaceTalent(dest) {
-		$($(dest).children()[1]).children().first().html("Lvl: " + this.level);
+		$($(dest).children()[1]).children().first().html("Lvl: " + this.lvl);
 		$(dest).children().last().html(this.description);
-		$($(dest.parentNode).children()[1]).children().attr("data", this.level);
+		$($(dest.parentNode).children()[1]).children().attr("data", this.lvl);
 	}
 };

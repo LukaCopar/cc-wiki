@@ -61,16 +61,6 @@ $hero = $lmao->fetch();
 //echo("<br>");
 
 ?>
-
-
-<html>
-
-<head>
-	<title>Hero: <?php echo ($name); ?></title>
-	<link rel="stylesheet" href="../css/style.css" type="text/css">
-</head>
-
-<body>
 	<div id="hero">
 		<div class="hero1">
 
@@ -120,6 +110,3 @@ $hero = $lmao->fetch();
 		</div>
 
 	</div>
-</body>
-
-</html>

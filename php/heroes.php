@@ -5,7 +5,7 @@ $lmao = $pdo->query("SELECT * FROM heros");
 $lvl = 1;
 $heroes = [];
 while ($xd = $lmao->fetch()) {
-	$skill1 = $pdo->query('SELECT * FROM hero_skills WHERE hero_id = '.$xd['id'].' AND level = '.$lvl.'');
+	$skill1 = $pdo->query('SELECT * FROM hero_skills WHERE hero_id = '.$xd['id'].';');
 	$skill = $skill1->fetch();
 	$skill_img = $skill['img_url'] ?? 'no image';
 	$q = $pdo->query("SELECT * FROM hero_lvl WHERE hero_name = '". str_replace("'", "\'", $xd['name']) ."';");

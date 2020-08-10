@@ -8,7 +8,7 @@ $(document).ready(() => {
 		$.ajax({
 			url: "/cc-wiki/php/heroes.php"
 		}).done(function(c) {
-			//console.log(c);
+			console.log("Heroes not found locally. Fetching from server...");
 			heroes = JSON.parse(c);
 			var ins = [];
 			heroes.forEach(function(val) {
@@ -25,7 +25,6 @@ $(document).ready(() => {
 		var heroes = [];
 		var temps = JSON.parse(window.localStorage.getItem("heroes"));
 		temps.forEach(function(el) {
-			//console.log(el);
 			var hero = new Hero();
 			hero.id = el.id;
 			hero.name = el.name;
@@ -48,19 +47,19 @@ $(document).ready(() => {
 		//console.log(heroes);
 	}
 
-	//Service worker
+	
 	
 	if(window.localStorage.getItem("talents") == null) {
 		$.ajax({
 		url: "/cc-wiki/php/talents.php"
 		}).done(function(c) {
 			talents = JSON.parse(c);
-			//console.log(c);
+			console.log("Talents not found locally. Fetching from server...");
 			var prevName = "";
 
 			var imgs = [];
 			talents.forEach(function (e) {
-				if(e.name != prevName)
+				if(e.name != prevName) {
 					$.ajax({
 						type: "POST",
 						url: "/cc-wiki/php/images.php",
@@ -74,18 +73,27 @@ $(document).ready(() => {
 						}
 						imgs.push(img);
 					});
+				}
 				prevName = e.name;
 			});
+			window.localStorage.setItem("talents", JSON.stringify(talents));
 		});
 	}
-
+	else {
+		talents = [];
+		JSON.parse(window.localStorage.getItem("talents")).forEach(function(el) {
+			var talent = new Talent(el.id, el.img_url, el.name, el.level, el.description);
+			talents.push(talent);
+		});
+	}
+	//Service worker
 	pizda();
 	$("#title").html("Heros");
 
 	$("#talents").click(function (e) {
 		if(typeof talents === 'undefined' || talents.length == 0) {
 			$.ajax({
-				url: "/php/talents.php"
+				url: "/cc-wiki/php/talents.php"
 			}).done((content) => {
 				var lmao2 = JSON.parse(content);
 				lmao2.forEach(function(e) {
@@ -100,14 +108,15 @@ $(document).ready(() => {
 		var parent = $("<div>");
 		parent.addClass("container-talents");
 		$("#content").append(parent);
-		console.log(talents);
+		//console.log(talents);
 		talents.forEach(function(e, val) {
-			if(e.level == 1) {
+			//console.log(e);
+			if(e.lvl == 1) {
 				var h3 = $("<h3>");
 			var br = $("<br>");
 			var div = $("<div>");
 			div.addClass("talent-lvl");
-			h3.html("Lvl: " + e.level);
+			h3.html("Lvl: " + e.lvl);
 			
 			var img = $("<img>");
 			var h4 = $("<h4>");
@@ -137,14 +146,14 @@ $(document).ready(() => {
 			divN.addClass("lvl-container");
 			a1.attr("id", e.name.replace(/ /g, ""));
 			a2.attr("id", e.name.replace(/ /g, ""));
-			a1.attr("href", "../php/talent.php?name="+e.name+"&la=1&lvl="+e.level);
-			a2.attr("href", "../php/talent.php?name="+e.name+"&la=2&lvl="+e.level);
+			a1.attr("href", "./php/talent.php?name="+e.name+"&la=1&lvl="+e.lvl);
+			a2.attr("href", "./php/talent.php?name="+e.name+"&la=2&lvl="+e.lvl);
 
 			a1.addClass("hehe plus");
-			a1.attr("data", e.level);
+			a1.attr("data", e.lvl);
 			a1.html("+");
 			a2.addClass("hehe minus");
-			a2.attr("data", e.level);
+			a2.attr("data", e.lvl);
 			a2.html("-");
 
 			divN.append(a1);
@@ -166,7 +175,7 @@ $(document).ready(() => {
 	$("#heroes").click(function () {
 		if(typeof heroes === 'undefined' || heroes.length == 0) {
 			$.ajax({
-				url: "/php/heroes.php"
+				url: "/cc-wiki/php/heroes.php"
 			}).done((content) => {
 				console.log("Getting heroes");
 				var lmao = JSON.parse(content);
@@ -213,24 +222,18 @@ $(document).ready(() => {
 	});
 	$(window).on('resize', function(el) {
 		if(!$("#navbar").hasClass("animate") && $(el.target.parentNode).hasClass("active")) {
-			$("#navbar").animate({
-				height: window.innerHeight * 0.09
-			}, 200, function () {
-				$("#meni").css("bottom", "0");
-				$("#navbar").css("overflow", "hidden");
-			});
+			$("#navbar").css("height", window.innerHeight * 0.09);
+			$("#meni").css("bottom", "0");
+			$("#navbar").css("overflow", "hidden");
 		}
 		else {
-			$("#navbar").animate({
-				height: window.innerHeight
-			}, 200, function () {
-				$("#meni").css("position", "fixed");
-				$("#meni").css("top", "0");
-				$("#meni").css("width", "100%");
-				$("#meni").css("z-index", "100");
-				$("#meni").css("height", "9vh");
-				$("#navbar").css("overflow", "auto");
-			});
+			$("#navbar").css("height", window.innerHeight);		
+			$("#meni").css("position", "fixed");
+			$("#meni").css("top", "0");
+			$("#meni").css("width", "100%");
+			$("#meni").css("z-index", "100");
+			$("#meni").css("height", "9vh");
+			$("#navbar").css("overflow", "auto");
 		}
 	});
 	$(".nav-item").click(function (e) {
@@ -278,14 +281,13 @@ $(document).ready(() => {
 $(document).on("click", ".hero-open", function (e) {
 	e.preventDefault();
 	var txt = '<div class="container">';
-	console.log($(this)[0].action);
 	$.ajax({
 		url: $(this)[0].action
 	}).done((content) => {
-		console.log("content");
 		txt += content;
 		txt += "</div>";
 		$("#title").html("Hero");
+		console.log(txt);
 		$("#content").html(txt);
 		var icons = JSON.parse(window.localStorage.getItem("icons"));
 		var atk = icons[0];
@@ -317,7 +319,6 @@ $(document).on("click", ".hehe", function (e) {
 		$.ajax({
 			url: $(this)[0].href
 		}).done((content) => {
-			//console.log(content);
 			txt = content;
 			talent = "#";
 			talent += $(this)[0].id;
@@ -327,25 +328,23 @@ $(document).on("click", ".hehe", function (e) {
 	else {
 		var tal = new Talent(); 
 		$.each(talents, function(ey, val) {
-			//console.log(val.name.replace(/ /g, ""));
 			if(val.name.replace(/ /g, "") == e.target.id) {
 				if($($(e)[0].target).hasClass("plus")) {
 					var lvl = ((parseInt($(e.target).attr("data"), 10) + 1) > 10) ? 10 : (parseInt($(e.target).attr("data"), 10) + 1);
-					if(val.level == lvl) {
+					if(val.lvl == lvl) {
 						tal.id = val.id;
 						tal.name = val.name;
-						tal.level = val.level;
+						tal.lvl = val.lvl;
 						tal.img_url = val.img_url;
 						tal.description = val.description;
 					}
 				}
 				if($($(e)[0].target).hasClass("minus")) {
 					var lvl = ((parseInt($(e.target).attr("data"), 10) - 1) < 1) ? 1 : (parseInt($(e.target).attr("data"), 10) - 1);
-					console.log(lvl);
-					if(val.level == lvl) {
+					if(val.lvl == lvl) {
 						tal.id = val.id;
 						tal.name = val.name;
-						tal.level = val.level;
+						tal.lvl = val.lvl;
 						tal.img_url = val.img_url;
 						tal.description = val.description;
 					}
@@ -359,18 +358,15 @@ $(document).on("click", ".hehe", function (e) {
 
 $(document).on("click", ".hehe2", function (e) {
 	e.preventDefault();
-	//console.log($(this)[0].id);
 	$.ajax({
 		url: $(this)[0].href
 	}).done((content) => {
-		//console.log(content);
 		txt = content;
 		$(".skill_stats").html(txt);
 	});
 });
 
 function pizda() {
-	//console.log("ayy lmao");
   	navigator.serviceWorker && navigator.serviceWorker.register('./sw.js').then(function(registration) {
 	  //console.log('Excellent, registered with scope: ', registration.scope);
 	});
