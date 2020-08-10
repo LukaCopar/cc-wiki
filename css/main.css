@@ -439,6 +439,26 @@
 }
 
 /* navbar */
+#build {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  height: 80%;
+  margin: 5px;
+}
+
+#build > div {
+  width: 50%;
+  border: 1px solid white;
+  height: 50%;
+}
+
 @-webkit-keyframes con {
   0% {
     height: 9vh;
@@ -449,6 +469,7 @@
     bottom: 0px;
   }
 }
+
 @keyframes con {
   0% {
     height: 9vh;
