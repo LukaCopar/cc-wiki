@@ -274,7 +274,6 @@ $(document).ready(() => {
 			$("#meni").css("top", "0");
 			$("#meni").css("width", "100%");
 			$("#meni").css("z-index", "100");
-			$("#meni").css("height", "9vh");
 			$("#navbar").css("overflow", "auto");
 		}
 	});

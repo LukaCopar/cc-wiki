@@ -22,17 +22,17 @@ text-align: center;
 .hero_stats {
 padding-left: 5vw;
 overflow: auto;
+display: flex;
 flex-wrap: wrap;
 flex-direction: column;
-display: flex;
 float: right;
+row-gap: 5px;
 width: 75%;
-height: 25vw !important;
 max-width: 100%;
 }
 .hero_stats > div {
 	height: 2vw;
-	max-width: 49%;
+	max-width: 100%;
 	font-family: Arial;
 	font-weight: 600;
 }
@@ -63,14 +63,16 @@ margin: 10px;
 overflow: hidden;
 }
 .skill1 {
-overflow: auto;
+overflow: hidden;
 display: flex;
 color: gray;
 width: 100%;
-max-height: 20vw;
 margin: auto;
 background-color: none;
 padding-top: 20px;
+}
+.skill1 > div{
+	height: inherit;
 }
 .stat {
 font-size: 1.3vw;
