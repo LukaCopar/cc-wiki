@@ -27,7 +27,7 @@ html {
 
 #content{
 
-	padding-top: 9vh;
+	padding-top: 200px;
 }
 
 @keyframes con {
@@ -505,8 +505,7 @@ padding-bottom: 1vw;
 
 @media only screen and (max-width: 900px) {
 	#content{
-		padding-top: 200px ;
-		overflow: initial ;
+		padding-top: 0px;
 	}
 
 	#hero{
