@@ -1,6 +1,30 @@
 var heroes;
 var talents;
 
+$(window).on('resize', function(el) {
+		if(!$("#navbar").hasClass("animate") && $(el.target.parentNode).hasClass("active")) {
+			$("#navbar").animate({
+				height: window.innerHeight * 0.09
+			}, 200, function () {
+				$("#meni").css("bottom", "0");
+				$("#navbar").css("overflow", "hidden");
+			});
+		}
+		else {
+			$("#navbar").animate({
+				height: window.innerHeight
+			}, 200, function () {
+				$("#meni").css("position", "fixed");
+				$("#meni").css("top", "0");
+				$("#meni").css("width", "100%");
+				$("#meni").css("z-index", "100");
+				$("#meni").css("height", "9vh");
+				$("#navbar").css("overflow", "auto");
+			});
+		}
+	});
+
+
 $(document).ready(() => {
 	
 
@@ -211,28 +235,7 @@ $(document).ready(() => {
 			parent.append(form);
 		});
 	});
-	$(window).on('resize', function(el) {
-		if(!$("#navbar").hasClass("animate") && $(el.target.parentNode).hasClass("active")) {
-			$("#navbar").animate({
-				height: window.innerHeight * 0.09
-			}, 200, function () {
-				$("#meni").css("bottom", "0");
-				$("#navbar").css("overflow", "hidden");
-			});
-		}
-		else {
-			$("#navbar").animate({
-				height: window.innerHeight
-			}, 200, function () {
-				$("#meni").css("position", "fixed");
-				$("#meni").css("top", "0");
-				$("#meni").css("width", "100%");
-				$("#meni").css("z-index", "100");
-				$("#meni").css("height", "9vh");
-				$("#navbar").css("overflow", "auto");
-			});
-		}
-	});
+	
 	$(".nav-item").click(function (e) {
 		$("#navbar").scrollTop(0);
 		if ($("#navbar").hasClass("animate") && $(e.target.parentNode).hasClass("active")) {
