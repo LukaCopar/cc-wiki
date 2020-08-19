@@ -1,4 +1,5 @@
 <?php
+try {
 
 $whitelistDomains = [
     'cc.wiki/',
@@ -37,7 +38,7 @@ foreach($whitelistDomains  as $link){
     checkUrl($link,$whitelistDomains);
 }
 
-$dbhost = "192.168.1.11";
+$dbhost = "192.168.1.222";
 $dbuser = "cc-wiki";
 $dbpass = "";
 $db = "cc-wiki";
@@ -51,10 +52,9 @@ $opt = [
 	PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
 	PDO::ATTR_EMULATE_PREPARES   => false,
 ];
-try {
 	$pdo = new PDO($dsn, $dbuser, $dbpass, $opt);
 } catch (\PDOException $e) {
-	throw new \PDOException($e->getMessage(), (int)$e->getCode());
+	//throw new \PDOException($e->getMessage(), (int)$e->getCode());
 }
 
 

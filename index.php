@@ -33,7 +33,7 @@
 		<!-- Header -->
 		<div id="header" class="navbar">
 			<div id="logo">
-				<h1><a href="index.php">CC Calculator</a></h1>
+				<h1><a style="background-color: none;" href="index.php">CC Calculator</a></h1>
 				<span class="tag">by Gašper and Luka</span>
 			</div>
 		</div>
