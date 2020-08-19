@@ -23,36 +23,45 @@ var talents;
 				$("#navbar").css("height", "auto");
 				}
 			else {
-				//console.log(1);
 					$("#meni").removeAttr('style');
 					$("#navbar").removeAttr('style');
 					$("#meni").css("position", "fixed");
 					$("#meni").css("bottom", "0");
 					$("#navbar").css("height", "0");
 					$("#navbar").css("overflow", "hidden");
-				
 			}
-
-			
-
 			timeout = false;
 		}               
 	}
 
 
-
-
 $(document).ready(() => {
-	
-
 	if(window.localStorage.getItem("heroes") == null) {
 		$.ajax({
 			url: "/cc-wiki/php/heroes.php"
 		}).done(function(c) {
 			console.log("Heroes not found locally. Fetching from server...");
-			heroes = JSON.parse(c);
+			heroess = JSON.parse(c);
 			var ins = [];
-			heroes.forEach(function(val) {
+			heroess.forEach(function(val) {
+				var hiro = new Hero();
+				hiro.id = (typeof val.id === 'undefined') ? 0 : val.id; 
+				hiro.name = (typeof val.name === 'undefined') ? 0 : val.name;
+				hiro.biography = (typeof val.biography === 'undefined') ? 0 : val.biography;
+				hiro.img_url = (typeof val.img_url === 'undefined') ? '' : val.img_url;
+				hiro.img_url_evo = (typeof val.img_url_evo === 'undefined') ? '' : val.img_url_evo;
+				hiro.skill_img = (typeof val.skill_img === 'undefined') ? '' : val.skill_img;
+				hiro.warden = (typeof val.warden === 'undefined') ? null : val.warden;
+				hiro.mov_spd = (typeof val.mov_spd === 'undefined') ? 0 : val.mov_spd;
+				hiro.atk_spd = (typeof val.atk_spd === 'undefined') ? 0 : val.atk_spd;
+				hiro.atk = (typeof val.atk === 'undefined') ? 0 : val.atk;
+				hiro.hp = (typeof val.hp === 'undefined') ? 0 : val.hp;
+				hiro.acc = (typeof val.acc === 'undefined') ? 0 : val.acc;
+				hiro.ddg = (typeof val.ddg === 'undefined') ? 0 : val.ddg;
+				hiro.crt = (typeof val.crt === 'undefined') ? 0 : val.crt;
+				hiro.crr = (typeof val.crr === 'undefined') ? 0 : val.crr;
+				hiro.crd = (typeof val.crd === 'undefined') ? 0 : val.crd;
+				hiro.skill = (typeof val.skill === 'undefined') ? null : val.skill;
 				if(window.localStorage.getItem(val.name) == null) {
 					ins.push(val);
 				}
@@ -63,26 +72,27 @@ $(document).ready(() => {
 	}
 
 	else {
-		var heroes = [];
+		heroes = [];
 		var temps = JSON.parse(window.localStorage.getItem("heroes"));
 		temps.forEach(function(el) {
 			var hero = new Hero();
-			hero.id = el.id;
-			hero.name = el.name;
-			hero.biography = el.biography;
-			hero.img_url = el.img_url;
-			hero.img_url_evo = el.img_url_evo;
-			hero.skill_img = el.img_url;
-			hero.warden = el.warden;
-			hero.mov_spd = el.mov_spd;
-			hero.atk_spd = el.atk_spd;
-			hero.atk = el.atk;
-			hero.hp = el.hp;
-			hero.acc = el.acc;
-			hero.ddg = el.ddg;
-			hero.crt = el.crt;
-			hero.crr = el.crr;
-			hero.crd = el.crd;
+			hero.id = (typeof el.id === 'undefined') ? 0 : el.id;
+			hero.name = (typeof el.name === 'undefined') ? 0 : el.name;
+			hero.biography = (typeof el.biography === 'undefined') ? '' : el.biography;
+			hero.img_url = (typeof el.img_url === 'undefined') ? '' : el.img_url;
+			hero.img_url_evo = (typeof el.img_url_evo === 'undefined') ? '' : el.img_url_evo;
+			hero.skill_img = (typeof el.img_url === 'undefined') ? '' : el.img_url;
+			hero.warden = (typeof el.warden === 'undefined') ? null : el.warden;
+			hero.mov_spd = (typeof el.mov_spd === 'undefined') ? 0 : el.mov_spd;
+			hero.atk_spd = (typeof el.atk_spd === 'undefined') ? 0 : el.atk_spd;
+			hero.atk = (typeof el.atk === 'undefined') ? 0 : el.atk;
+			hero.hp = (typeof el.hp === 'undefined') ? 0 : el.hp;
+			hero.acc = (typeof el.acc === 'undefined') ? 0 : el.acc;
+			hero.ddg = (typeof el.ddg === 'undefined') ? 0 : el.ddg;
+			hero.crt = (typeof el.crt === 'undefined') ? 0 : el.crt;
+			hero.crr = (typeof el.crr === 'undefined') ? 0 : el.crr;
+			hero.crd = (typeof el.crd === 'undefined') ? 0 : el.crd;
+			hero.skill = (typeof el.skill === 'undefined') ? null : el.skill;
 			heroes.push(hero);
 		});
 		//console.log(heroes);
@@ -240,13 +250,14 @@ $(document).ready(() => {
 			div.addClass("hero");
 			var img = $("<img>");
 			img.addClass("hero-card-img");
-			img.attr("src", window.localStorage.getItem("zeph"));
+			//img.attr("src", window.localStorage.getItem("zeph"));
+			img.attr("id", hero.id);
 			img.attr("alt", "jah nema");
 			var div2 = $("<div>");
 			div2.addClass("hero-name-skil");
 			var img2 = $("<img>");
 			img2.addClass("hero-skill-img");
-			img2.attr("src", window.localStorage.getItem("zeph"));
+			//img2.attr("src", window.localStorage.getItem("zeph"));
 			var h4 = $("<h4>");
 			h4.addClass("hero-name");
 			h4.html(hero.name);
@@ -274,11 +285,10 @@ $(document).ready(() => {
 			$("#meni").css("top", "0");
 			$("#meni").css("width", "100%");
 			$("#meni").css("z-index", "100");
-			$("#meni").css("height", "9vh");
 			$("#navbar").css("overflow", "auto");
 		}
 	});
-	
+
 	$(".nav-item").click(function (e) {
 		$("#navbar").scrollTop(0);
 		if ($("#navbar").hasClass("animate") && $(e.target.parentNode).hasClass("active")) {
@@ -328,6 +338,12 @@ $(document).ready(() => {
 
 $(document).on("click", ".hero-open", function (e) {
 	e.preventDefault();
+	var hero;
+	heroes.forEach(function(el) {
+		if(el.id == e.target.id)
+			hero = el;
+	});
+	console.log(hero);
 	var txt = '<div class="container">';
 	$.ajax({
 		url: $(this)[0].action
@@ -335,8 +351,142 @@ $(document).on("click", ".hero-open", function (e) {
 		txt += content;
 		txt += "</div>";
 		$("#title").html("Hero");
-		console.log(txt);
-		$("#content").html(txt);
+		//console.log(txt);
+		$("#content").html("");
+
+		var divLvl = $("<div>");
+		var aPlus = $("<a>");
+		var aMinus = $("<a>");
+		var h3 = $("<h3>");
+
+		divLvl.append(aPlus);
+		divLvl.append(h3);
+		divLvl.append(aMinus);
+		divLvl.text("lmao test");
+
+
+
+		var divHp = $("<div>");
+		var divAtk = $("<div>");
+		var divAtkSpd = $("<div>");
+		var divCrit = $("<div>");
+		var divDodge = $("<div>");
+		var divCritDmg = $("<div>");
+		var divMovSpd = $("<div>");
+		var divAcc = $("<div>");
+		var divCritRes = $("<div>");
+		var h4 = $("<h4>");
+
+
+		var imgHp = $("<img>");
+		var imgAtk = $("<img>");
+		var imgAtkSpd = $("<img>");
+		var imgCrit = $("<img>");
+		var imgDodge = $("<img>");
+		var imgCritDmg = $("<img>");
+		var imgMovSpd = $("<img>");
+		var imgAcc = $("<img>");
+		var imgCritRes = $("<img>");
+
+		imgHp.addClass("stat_img");
+		imgAtk.addClass("stat_img");
+		imgAtkSpd.addClass("stat_img");
+		imgCrit.addClass("stat_img");
+		imgDodge.addClass("stat_img");
+		imgCritDmg.addClass("stat_img");
+		imgMovSpd.addClass("stat_img");
+		imgAcc.addClass("stat_img");
+		imgCritRes.addClass("stat_img");
+
+
+		imgHp.attr("id", "imgHp");
+		imgAtk.attr("id", "imgAtk");
+		imgAtkSpd.attr("id", "imgAtkSpd");
+		imgCrit.attr("id", "imgCrit");
+		imgDodge.attr("id", "imgDodge");
+		imgCritDmg.attr("id", "imgCritDmg");
+		imgMovSpd.attr("id", "imgMovSpd");
+		imgAcc.attr("id", "imgAcc");
+		imgCritRes.attr("id", "imgCritRes");
+
+
+		imgHp.text("imgHp" + hero.hp);
+		imgAtk.text("imgAtk" + hero.atk);
+		imgAtkSpd.text("imgAtkSpd" + hero.atk_spd);
+		imgCrit.text("imgCrit" + hero.crr);
+		imgDodge.text("imgDodge" + hero.ddg);
+		imgCritDmg.text("imgCritDmg" + hero.crd);
+		imgMovSpd.text("imgMovSpd" + hero.mov_spd);
+		imgAcc.text("imgAcc" + hero.acc);
+		imgCritRes.text("imgCritRes" + hero.crr);
+
+
+		h4.text("lvl: 200 devo");
+
+		var imgSkill = $("<img>");
+		var imgHero = $("<img>");
+		var divSkillDesc = $("<div>");
+
+		//imgHero.attr("src", window.localStorage.getItem("zeph"));
+		imgHero.addClass("skill_desc");
+
+		divSkillDesc.attr("alt", "nema");
+
+		divSkillDesc.append(divLvl);
+
+
+		var divSkillImg = $("<div>");
+		var divSkillStat = $("<div>");
+		var divHeroStat = $("<div>");
+		var divHeroImg = $("<div>");
+
+		divSkillImg.addClass("hero_skill_img");
+		divSkillStat.addClass("skill_stats");
+
+		divHeroStat.addClass("hero_stats");
+		divHeroImg.addClass("hero_img");
+
+		divSkillStat.append(divSkillDesc);
+
+		divHeroImg.append(imgHero);
+
+		divHeroStat.append(h4);
+		divHeroStat.append(divHp);
+		divHeroStat.append(divAtk);
+		divHeroStat.append(divAtkSpd);
+		divHeroStat.append(divCrit);
+		divHeroStat.append(divDodge);
+		divHeroStat.append(divCritDmg);
+		divHeroStat.append(divMovSpd);
+		divHeroStat.append(divAcc);
+		divHeroStat.append(divCritRes);
+
+		var divStats = $("<div>");
+		var divHeroImg = $("<div>");
+
+		divHeroImg.append(imgHero);
+		divHeroImg.append(divSkill);
+
+		var divInnerHero = $("<div>");
+		var divSkill = $("<div>");
+
+		divInnerHero.addClass("hero1");
+		divSkill.addClass("skill1");
+
+		divInnerHero.append(divHeroImg);
+		divInnerHero.append(divHeroStat);
+
+		divSkill.append(divSkillImg);
+		divSkill.append(divSkillStat);
+
+		var divHero = $("<div>");
+
+		divHero.attr("id", "hero");
+		divHero.append(divInnerHero);
+		divHero.append(divSkill);
+		console.log(divHero[0]);
+		$("#content").append(divHero);
+		//Ikonce
 		var icons = JSON.parse(window.localStorage.getItem("icons"));
 		var atk = icons[0];
 		var acc = icons[7];

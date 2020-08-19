@@ -37,7 +37,7 @@ foreach($whitelistDomains  as $link){
     checkUrl($link,$whitelistDomains);
 }
 
-$dbhost = "192.168.1.11";
+$dbhost = "192.168.1.222";
 $dbuser = "cc-wiki";
 $dbpass = "";
 $db = "cc-wiki";

@@ -6,8 +6,17 @@ $lvl = 1;
 $heroes = [];
 while ($xd = $lmao->fetch()) {
 	$skill1 = $pdo->query('SELECT * FROM hero_skills WHERE hero_id = '.$xd['id'].';');
-	$skill = $skill1->fetch();
-	$skill_img = $skill['img_url'] ?? 'no image';
+	$skills = [];
+	$skill_img;
+	while($skils = $skill1->fetch()) {
+		$skill = new \stdClass();
+		$skill->name = $skils['name'];
+		$skill->desc = $skils['description'];
+		$skill->level = $skils['level'];
+
+		array_push($skills, $skill);
+	}
+	$skill_img = $skils['img_url'] ?? 'no image';
 	$q = $pdo->query("SELECT * FROM hero_lvl WHERE hero_name = '". str_replace("'", "\'", $xd['name']) ."';");
 	$maxLvl = $q->fetch();
 	// if (isset($skill['img_url']))
@@ -24,7 +33,7 @@ while ($xd = $lmao->fetch()) {
 	$hero->biography = $xd['biography'];
 	$hero->img_url = $xd['img_url'];
 	$hero->img_url_evo = $xd['img_url_evo'];
-	$hero->skill = $skill;
+	$hero->skill = $skills;
 	//$hero->warden = $xd['warden'];
 	$hero->mov_spd = $xd['move_spd'];
 	$hero->atk_spd = $xd['atk_speed'];
